@@ -2,6 +2,9 @@
 <html>
 <head>
     <style>
+        * {
+            font-style: italic;
+        }
         p {
             color: rgb(244, 30, 30);
             font-size: 20px;
@@ -23,12 +26,22 @@
             background: rgb(47, 231, 255);
             color: white;
         }
+
+        .myclass1 {
+            font-size: 100px;
+        }
+
+        input[type="text"]{
+            background-color: #e0ee28;
+        }
     </style>
 </head>
 
 <body>
-    <h1 style="background-color: orange; color: white;">Amazon.com</h1>
+    <h1 class="myclass1" style="background-color: orange; color: white;">Amazon.com</h1>
     <h2>The only place on earth to shop</h2>
+
+    Enter your username to subsribe for offers <input type="text"> <br><br>
 
     <a href=" " style="background-color:lightgreen">Shop on Mars</a>
     <a href="moon" style="background-color:lightgreen">Shop on Moon</a>

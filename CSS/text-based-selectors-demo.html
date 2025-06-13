@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div>p:first-child,div>p:last-child {
+            color: red
+        }
+
+        div>p:last-child {
+            background-color: rgb(0, 225, 255)
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>The first paragraph in the div. It will be indented. </p>
+        <p>The second paragraph is not in the div. So, it will not be indented. </p>
+        <p>The third paragraph in the div. It will be indented. </p>
+        <p>The fourth paragraph is not in the div. So, it will not be indented. </p>
+    </div>
+    <p>But this will not match the paragraph in this HTML. </p>
+    <div>
+        <h3>First child example</h3>
+        <p>This paragraph inside the div tag will not be affected</p>
+    </div>
+</body>
+
+</html>
