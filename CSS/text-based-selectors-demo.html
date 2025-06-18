@@ -3,25 +3,43 @@
 
 <head>
     <style>
-        div>p:first-child,div>p:last-child {
-            color: red
+        p:first-line {
+            text-decoration: underline;
+            color:red
         }
 
-        div>p:last-child {
-            background-color: rgb(0, 225, 255)
+        p.noline:first-line {
+            text-decoration: none;
+            color:blue
         }
 
-        div>p:nth-child(2) {
-            font-size: 40px;
+        p:first-line {
+            text-decoration: underline;
+            color:red
         }
+
+
     </style>
 </head>
 
 <body>
     <div>
-        <p>The first paragraph in the div. It will be indented. </p>
+        <p>
+            The first paragraph in the div. It will be indented. 
+            Second line of first para line.
+            Third line of first para.
+        </p>
         <p>The second paragraph is not in the div. So, it will not be indented. </p>
-        <p>The third paragraph in the div. It will be indented. </p>
+        <p class="noline">The third paragraph in the div. It will be indented.
+            Second line of 4th para.
+            Third line of 4th para.
+            fourth line of 4th para.
+            fifth line of 4th para. </p>
+        <p>The third paragraph in the div. It will be indented.
+            Second line of 4th para.
+            Third line of 4th para.
+            fourth line of 4th para.
+            fifth line of 4th para. </p>
         <p>The fourth paragraph is not in the div. So, it will not be indented. </p>
     </div>
     <p>But this will not match the paragraph in this HTML. </p>
