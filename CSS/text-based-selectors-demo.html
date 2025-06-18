@@ -13,10 +13,16 @@
             color:blue
         }
 
-        p:first-line {
-            text-decoration: underline;
-            color:red
+        p:before{
+            content:"🎮"
         }
+
+        p::first-letter {
+            font-size: 32px;
+        }
+
+       
+        
 
 
     </style>
@@ -47,6 +53,10 @@
         <h3>First child example</h3>
         <p>This paragraph inside the div tag will not be affected</p>
     </div>
+
+
+
+
 </body>
 
 </html>
