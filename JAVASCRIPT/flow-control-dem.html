@@ -1,0 +1,100 @@
+<script>
+// demo if/else
+function votingEli(age) {
+        if (age > 18) {
+            return "Eligible for Voting";
+        } else {
+            return "Not Eligible";
+        }
+    };
+
+    let votingEligiblilty = votingEli(34);
+    console.log("votingEligiblilty", votingEligiblilty);
+</script>
+
+<script>
+    // demo loping
+
+    // using for
+    console.log("demo using for")
+    for( let i=0 ; i< 5 ; i++){
+        console.log ("i", i);
+    }
+
+
+    // using while
+    console.log("demo using while\n")
+    let j=0;
+    while(j < 5 ){
+        console.log ("j",j);
+        j++;
+    };
+
+</script>
+        
+    <script>
+        // demo loping with breaks
+    // using for with break
+    console.log("demo using for with break\n")
+    for( let i=0 ; i< 10 ; i++){
+        console.log ("i", i);
+        if (i == 5) break;
+    }
+
+    // using while
+    console.log("demo using while with break \n")
+    j=0;
+    while(j < 10 ){
+        console.log ("j",j);
+        j++;
+        if (j == 8) break;
+    };
+
+</script>
+
+<script>
+console.log("\n demo loping with continue")
+console.log("for with continue\n")
+for( let i=0 ; i< 10 ; i++){
+    console.log ("before continue i", i);
+    if (i == 5) continue;
+    console.log ("after continue i", i);
+}
+
+//using while
+console.log("demo using while with continue \n")
+j=0;
+while(j < 10 ){
+    console.log ("before continue j", j);
+    j++;
+    if (j == 8) continue;
+    console.log ("before continue j", j);
+};
+//
+
+</script>
+
+<script>
+    console.log("\n\n demo object looping using for .. in \n");
+    let var1 = new Object();
+    var1.x1 = 10;
+    var1.x2 = 20;
+    var1.location = "Bangalore";
+
+
+    console.log("var1", var1);
+    for (i in var1){
+        console.log(var1[i]);
+    }
+
+</script>
+
+<script>
+    console.log("\n\n demo iterable looping using for .. of \n");
+    let colors = [ "green", "yellow", "blue", "white" , "grey",  "red" ];
+    console.log(colors);
+    for ( item of colors){
+        console.log(item);
+    }
+
+</script>
