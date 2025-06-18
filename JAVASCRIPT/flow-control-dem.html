@@ -131,4 +131,28 @@ while(j < 10 ){
             console.log('Invalid day.');
     }
 
+    //Task:
+    function giveBonus(position) {
+        let bonus;
+        switch (position) {
+          case "Engineer I":
+            bonus = 1000;
+            break;
+          case "Engineer II":
+            bonus = 2000;
+            break;
+          case "Engineer III":
+            bonus = 3000;
+            break;
+          default:
+            bonus = 0; 
+        }
+        return bonus;
+      }
+
+     let resultBonusofClerk = giveBonus("Clerk");
+     console.log("resultBonusofClerk", resultBonusofClerk);
+     let resultBonusofEngineerII = giveBonus("Engineer II");
+     console.log("resultBonusofEngineerII", resultBonusofEngineerII);
+
 </script>

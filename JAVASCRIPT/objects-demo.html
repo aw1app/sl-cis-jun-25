@@ -12,11 +12,30 @@
     let car = {};
     console.log("car", car);
 
-    let bus = { 
-        "x1": 20, 
-        "x2": 20 
+    let bus = {
+        "x1": 20,
+        "x2": 20
     };
     console.log("bus", bus);
     console.log("bus.x1", bus.x1);
+
+</script>
+
+<script>
+    // Creating objects using function
+    function Flight(name, fare) {
+        this.name = name;
+        this.fare = fare;
+
+        this.display = function() {
+            console.log("Name of the flight and its fare is", this.name, this.fare);
+        }
+    };
+
+    let flight1 = new Flight("Indigo 134", 15000 );
+    flight1.display();
+
+    let flight2 = new Flight("Jet Airways 2121", 25000 );
+    flight2.display();
 
 </script>
