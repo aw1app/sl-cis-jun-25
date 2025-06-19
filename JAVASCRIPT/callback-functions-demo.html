@@ -1,0 +1,15 @@
+<script>
+
+    let add = (x,y) => x+y;
+    let multiply = (x,y) => x * y;
+
+
+    let myArithmeticFunction = (a,b, arthFunction) =>  arthFunction(a,b);
+
+    let sumResult = myArithmeticFunction(2,3, add);
+    let productResult = myArithmeticFunction(2,3, multiply);
+
+    console.log(`sumResult = ${sumResult}`);
+    console.log(`productResult = ${productResult}`);
+
+</script>

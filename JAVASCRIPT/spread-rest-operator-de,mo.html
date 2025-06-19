@@ -10,40 +10,40 @@
 
 
     let studentsArray = [
-    new Student("ram", 28, 5.9),
-    new Student("sam", 19, 5.5),
-    new Student("jay", 40, 6.0),
-    new Student("mohan", 18, 5.4),
-    new Student("rohan", 21, 5.8)
-];
+        new Student("ram", 28, 5.9),
+        new Student("sam", 19, 5.5),
+        new Student("jay", 40, 6.0),
+        new Student("mohan", 18, 5.4),
+        new Student("rohan", 21, 5.8)
+    ];
 
-function averageAgeOfStudents(s1,s2,s3){
-    return (s1.age + s2.age + s3.age) / 2;
-}
+    function averageAgeOfStudents(s1, s2, s3) {
+        return (s1.age + s2.age + s3.age) / 2;
+    }
 
-let avgRes = averageAgeOfStudents(studentsArray[0], studentsArray[1], studentsArray[2]);
-console.log("avgRes", avgRes);
-
-
-
-// Demo spread EXAMPLE-1
-let avgRes1 = averageAgeOfStudents(...studentsArray);
-console.log("avgRes1", avgRes1);
-
-let  studentsGroup1 = [
-new Student("BALU", 28, 5.9),
-new Student("SHALU", 11, 5.5)
-];
-
-let  studentsGroup2 = [
-new Student("Prema", 28, 5.9),
-new Student("Palani", 19, 5.5)
-];
+    let avgRes = averageAgeOfStudents(studentsArray[0], studentsArray[1], studentsArray[2]);
+    console.log("avgRes", avgRes);
 
 
-// FOR 
-let combinedGroup  =[ ...studentsArray, ...studentsGroup1, ...studentsGroup2];
-console.log("combinedGroup", combinedGroup);
+
+    // Demo spread EXAMPLE-1
+    let avgRes1 = averageAgeOfStudents(...studentsArray);
+    console.log("avgRes1", avgRes1);
+
+    let studentsGroup1 = [
+        new Student("BALU", 28, 5.9),
+        new Student("SHALU", 11, 5.5)
+    ];
+
+    let studentsGroup2 = [
+        new Student("Prema", 28, 5.9),
+        new Student("Palani", 19, 5.5)
+    ];
+
+
+    // FOR 
+    let combinedGroup = [...studentsArray, ...studentsGroup1, ...studentsGroup2];
+    console.log("combinedGroup", combinedGroup);
 
 
 </script>
@@ -52,19 +52,24 @@ console.log("combinedGroup", combinedGroup);
 <script>
     // REST operator demo
     console.log("REST operator demo");
-    [a,b,c,...remainingStudents] = combinedGroup;
-    console.log("a", a,"\n b", b,"\n c", c, );
+    [a, b, c, ...remainingStudents] = combinedGroup;
+    console.log("a", a, "\n b", b, "\n c", c,);
     console.log("remainingStudents", remainingStudents);
 
-    
-    console.log("TASK: Print the names of remaining students in CAPS. ");
+
+    console.log("TASK-1: Print the names of remaining students in CAPS. ");
     console.log("SOLUTION-1:");
-    remainingStudents.forEach(  student => console.log(student.name.toUpperCase())   );
+    remainingStudents.forEach(student => console.log(student.name.toUpperCase()));
 
     console.log("SOLUTION-2 using map:");
     /* let namesInCapsArray = remainingStudents.map(  student => student.name.toUpperCase()  );
     namesInCapsArray.forEach( name => console.log(name) ); */
 
-    remainingStudents.map(  student => student.name.toUpperCase()  )
-    .forEach( name => console.log(name) );
+    remainingStudents.map(student => student.name.toUpperCase())
+        .forEach(name => console.log(name));
+
+    console.log("TASK-2: Print the names of only those of remaining students whose name begins with r/R . ");
+    remainingStudents
+        .filter(student => student.name[0].toLowerCase() ==='r' )
+        .forEach(name => console.log(name));
 </script>
