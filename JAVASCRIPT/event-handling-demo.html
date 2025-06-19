@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<script>
+
+    let myEventHandler = (event) => {
+        console.log("INSIDE myEventHandler target " + event.target.id);
+        console.log("Event happended at x=" , event.x, "y=" , event.y);
+    };
+
+</script>
+
+
+<body>
+
+    <h1>Amazon.com </h1>
+
+<span id="enemy1" style="background-color: beige;" onmouseover="myEventHandler(event);"> Enemy1 </span>
+<br><br>
+<span id="enemy2" style="background-color: beige;" onmouseover="myEventHandler(event);"> Enemy2 </span>
+
+</body>
