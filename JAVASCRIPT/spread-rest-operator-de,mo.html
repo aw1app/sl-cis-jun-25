@@ -56,6 +56,15 @@ console.log("combinedGroup", combinedGroup);
     console.log("a", a,"\n b", b,"\n c", c, );
     console.log("remainingStudents", remainingStudents);
 
-    //TASK: Print the names of remaining students in CAPS
+    
+    console.log("TASK: Print the names of remaining students in CAPS. ");
+    console.log("SOLUTION-1:");
+    remainingStudents.forEach(  student => console.log(student.name.toUpperCase())   );
 
+    console.log("SOLUTION-2 using map:");
+    /* let namesInCapsArray = remainingStudents.map(  student => student.name.toUpperCase()  );
+    namesInCapsArray.forEach( name => console.log(name) ); */
+
+    remainingStudents.map(  student => student.name.toUpperCase()  )
+    .forEach( name => console.log(name) );
 </script>
