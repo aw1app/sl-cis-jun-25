@@ -1,0 +1,19 @@
+<script src="Student.js">   </script>
+
+<script>
+    let student1 = new Student("Suma", 28, 5.9);
+
+    function checkEligibiltyForvoting( { name, age, email } ) {
+
+        if (age > 18)
+        return ` ${name}, you are eligible to vote`;
+        else
+        ` ${name}, you are not eligible to vote`;
+       
+    };
+
+    let voteCheckResult = checkEligibiltyForvoting(student1);
+    console.log(voteCheckResult);
+
+
+</script>
