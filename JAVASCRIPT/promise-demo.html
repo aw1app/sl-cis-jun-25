@@ -1,0 +1,59 @@
+<script>
+
+    let add = (a, b) => {
+        console.log("Inside add function a=" + a +" and b="+b );
+        for (let i = 0; i < 10000000000; i++) { };
+        //console.log("Inside add function " + (a + b));
+        return a + b;
+    };
+
+</script>
+
+<script>
+    // Promise
+    let myPromise = new Promise(
+
+        (f1, f2) => {
+            // do some long runing job
+            let result = add(2, 5);
+            
+            // assume everything went well
+            let wentwell = true;
+            if (wentwell)
+                f1(result);
+            else
+                f2(new Error("something went wrong"));
+        }
+
+    );
+
+    let myPromise2 = new Promise(
+
+        (f1, f2) => {
+            // do some long runing job
+            let result = add(12, 15);
+            
+            // assume everything went well
+            let wentwell = true;
+            if (wentwell)
+                f1(result);
+            else
+                f2(new Error("something went wrong"));
+        }
+
+    );
+
+
+    console.log("STATEMENT10");
+    console.log("STATEMENT20");
+    myPromise
+    .then( res => console.log(res))
+    .catch( err => console.error(err));
+    myPromise2
+    .then( res => console.log(res))
+    .catch( err => console.error(err));
+    console.log("STATEMENT40");
+    console.log("STATEMENT50");
+
+
+</script>

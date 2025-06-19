@@ -1,0 +1,31 @@
+<button onclick="delayedMessage();">Show a message in the OUTPUT </button>
+<button onclick="clearMessage();">Cancel message before it happens</button>
+
+<div id="output1"> OUTPUT1 </div>
+<div id="output2"> OUTPUT2 </div>
+
+
+<script>
+
+let timeoutID1,timeoutID2;
+let counter1=1,counter2=1;
+
+function setOutput1(outputContent) {
+  document.querySelector("#output1").textContent =outputContent+ counter1++;
+}
+function setOutput2(outputContent) {
+    document.querySelector("#output2").textContent =outputContent+ counter2++;
+  }
+
+function delayedMessage() {
+  setOutput1("");setOutput2("");
+  timeoutID1 = setInterval(setOutput1, 2 * 1000, "OUTPUT 1 = ");
+  timeoutID2 = setInterval(setOutput2, 2 * 1000, "OUTPUT 2 = " ) ;
+}
+
+function clearMessage() {
+  clearTimeout(timeoutID1);
+  clearTimeout(timeoutID2);
+}
+
+</script>
