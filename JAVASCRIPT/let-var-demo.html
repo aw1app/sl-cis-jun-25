@@ -1,0 +1,80 @@
+<script>
+
+    var x1 = 10;
+
+    console.log("x1 in line 5 ", x1);
+
+    function f1(z) {
+
+        var x2 = 20;
+
+        console.log("x1 inside f1 function at line 11", x1);
+        console.log("x2 inside f1 function at line 12", x2);
+
+        {
+            var x3 = 30;
+            console.log("x3 inside f1 function at line 16", x3);
+        }
+        console.log("x3 inside f1 function at line 18", x3);
+
+    }
+
+    f1();
+
+    console.log("x1 inside at line 18", x1);
+    // console.log("x2 inside f1 function at line 12", x2); // ERROR
+
+
+</script>
+
+
+<script>
+    console.log("LET keyword demo ");
+
+
+    let y1 = 10;
+
+    console.log("y1 in line 35 ", y1);
+
+    function f2(z) {
+
+        let y2 = 20;
+
+        console.log("y1 inside f2 function at line 41", y1);
+        console.log("y2 inside f2 function at line 42", y2); // GOOD
+
+        {
+            let y3 = 30;
+            console.log("y3 inside f2 function at line 46", y3); // GOOD
+
+            console.log("y2 inside f2 function at line 42", y2); // GOOD
+        }
+        // console.log("y3 inside f2 function at line 48", y3); // ERROR
+
+    }
+
+    f2();
+
+    console.log("y1 inside at line 54", y1);
+    // console.log("y2 inside f2 function at line 55", y2); // ERROR
+
+
+</script>
+
+<script>
+    function f3() {
+        console.log("a1 before decl ", a1);
+        var a1 = 10;
+        console.log("a1 after decl", a1);
+    };
+    f3();
+
+
+    function f4() {
+        console.log("a4 before decl ", a4);
+        let a4 = 10;
+        console.log("a4 after decl", a4);
+    };
+    f4();
+
+</script>
