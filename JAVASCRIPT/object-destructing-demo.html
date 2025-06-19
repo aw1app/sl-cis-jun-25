@@ -3,21 +3,54 @@
 <script>
     let student1 = new Student("Suma", 28, 5.9);
 
-    function checkEligibiltyForvoting( { name, age, email } ) {
+    function checkEligibiltyForvoting({ name, age, email }) {
 
         if (age > 18)
-        return ` ${name}, you are eligible to vote`;
+            return ` ${name}, you are eligible to vote`;
         else
-        ` ${name}, you are not eligible to vote`;
-       
+            ` ${name}, you are not eligible to vote`;
+
     };
 
     let voteCheckResult = checkEligibiltyForvoting(student1);
     console.log(voteCheckResult);
 
+</script>
+
+<input id="name" placeholder="Name" />
+<input id="age" placeholder="Age" type="number" />
+<input id="email" placeholder="Email" />
+<button id="addBtn">Add Employee</button>
+
+
+<script>
     //TASK: Create a Input for accepting name, age and email of an Employee.
     // Then create employee based on the data collected.
-    // you should be able to create many employees.  Each time, an Employee is created it should added to the
+    // you should be able to create many employees.  Each time, an Employee is created it should get added to the
     // existing list of employees.
 
+    class Employee {
+        constructor(name, age, email) {
+            this.name = name;
+            this.age = age;
+            this.email = email;
+        }
+    }
+
+    let employees = [];
+    document.getElementById('addBtn').onclick = function () {
+        let name = document.getElementById('name').value;
+        let age = parseInt(document.getElementById('age').value);
+        let email = document.getElementById('email').value;
+        
+        let emp = new Employee(name, age, email);
+        employees.push(emp);
+
+        console.log(employees);
+        document.getElementById('name').value = '';
+        document.getElementById('age').value = '';
+        document.getElementById('email').value ='';
+    }
+
 </script>
+
