@@ -1,0 +1,52 @@
+<script>
+    function f1() {
+        let x = 10;
+
+        let f2 = () =>  ++x;
+        return f2;
+
+    };
+
+
+    let p = f1();// p=f2
+    console.log(p) ; // will tell that p is a function
+    
+    let incrementedX = p();
+    console.log("incrementedX", incrementedX); // 11
+    
+    incrementedX = p();
+    console.log("incrementedX", incrementedX); // ?? 12
+
+    incrementedX = p();
+    console.log("incrementedX", incrementedX); // ?? 13
+
+
+</script>
+
+
+<script>
+    function otp() {
+        let seed = Math.random();
+
+        let f2 = () =>  ++seed;
+        return f2;
+
+    };
+
+
+    let otpFunction = otp();//
+    
+    let otpNumber = otpFunction();
+    console.log("otpNumber", otpNumber); // 11
+    
+    otpNumber = otpFunction();
+    console.log("otpNumber", otpNumber); // ?? 12
+
+    incrementedX = otpFunction();
+    console.log("otpNumber", otpNumber); // ?? 13
+
+
+</script>
+
+// TASK: Create a Student class. This should class should have an ID property. 
+// Whenever a new student is created, the ID should be set automatically set to the next number.

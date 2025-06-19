@@ -1,15 +1,29 @@
 <script>
 
-    let add = (x,y) => x+y;
-    let multiply = (x,y) => x * y;
+    let add = (x, y) => x + y;
+    let multiply = (x, y) => x * y;
 
 
-    let myArithmeticFunction = (a,b, arthFunction) =>  arthFunction(a,b);
+    let myArithmeticFunction = (a, b, arthFunction) => arthFunction(a, b); // Here arthFunction is a callback function
 
-    let sumResult = myArithmeticFunction(2,3, add);
-    let productResult = myArithmeticFunction(2,3, multiply);
+    let sumResult = myArithmeticFunction(2, 3, add);
+    let productResult = myArithmeticFunction(2, 3, multiply);
 
     console.log(`sumResult = ${sumResult}`);
     console.log(`productResult = ${productResult}`);
+
+    console.log("TASK-1: Requirement is that we want a function that can greet a user sometimes as Good Morning or sometimes as Good Evening.");
+    // How would you use a callback function to accomplish this?
+    let morningGreeting = name => `Good Morning, ${name}!`;
+    let eveningGreeting = name => `Good Evening, ${name}!`;
+
+    function greetUser(name, greetingFunction) {
+        return greetingFunction(name);
+    }
+
+    if(new Date().getHours()< 12)
+    console.log(greetUser("Alice", morningGreeting));
+    else
+    console.log(greetUser("Alice", eveningGreeting));
 
 </script>
