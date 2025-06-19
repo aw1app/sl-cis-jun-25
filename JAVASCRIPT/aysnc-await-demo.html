@@ -1,0 +1,16 @@
+<script>
+    async function getData(userid) {
+
+        let userData = await fetch(`https://jsonplaceholder.typicode.com/users/${userid}`);
+
+        console.log("userData", userData);
+
+    };
+
+    console.log("STATEMENT10");
+    console.log("STATEMENT20");
+    getData(1);
+    getData(2);
+    console.log("STATEMENT40");
+    console.log("STATEMENT50");
+</script>
