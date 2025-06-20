@@ -12,8 +12,10 @@ import { ProductComponent } from '../product/product.component';
 })
 export class ProductListComponent {
 
- @Input("products") products!: Product[];
+  @Input("products") products!: Product[];
 
-
+  addToCart(pName:string): void {
+  console.log(` Ok added  ${pName} to the cart`);
+  }
 
 }

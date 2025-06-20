@@ -12,13 +12,14 @@
             <th>Name</th>
             <th>Price</th>
             <th>Picture</th>
+            <th> ADD TO CART </th>
         </thead>
 
         <tr *ngFor="let prod of products">
             <td [style.color]="prod.inStock ? 'green' : 'grey'"><b>{{prod.name}}</b></td>
             <td [style.color]="prod.price <10000 ? 'grey' : 'orange'">{{prod.price }}</td>
             <td><img src="{{prod.imagePath}}" width="100" height="50"></td>
-
+            <td><button (click)="addToCart(prod.name)"> Add </button></td>
         </tr>
 
     </table>
@@ -26,7 +27,7 @@
 
     <hr/>
     <br>
-    <p>List of Product at Amzn today (APPROACH 2 )</p>
+    <p>List of Products at Amzn today (APPROACH 2 )</p>
     <div *ngFor="let prod of products">
         <product name="{{prod.name}}" [price]="prod.price" [inStock]="prod.inStock" [imagePath]="prod.imagePath"> </product>
     </div>
