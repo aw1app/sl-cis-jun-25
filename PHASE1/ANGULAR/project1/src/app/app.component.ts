@@ -16,6 +16,8 @@ export class AppComponent {
 
   x=1000;
 
+  //cart!:Product[];
+
  products:Product[] = [
     new Product(1, "iPhone", 75000, "Great Phone 1", true, 'images/Apple-Phone.JPG'),
     new Product(2, "Dell Laptop", 5000, "Simple Phone 2", true, 'images/dell.JPG'),
@@ -28,4 +30,9 @@ export class AppComponent {
 
 
   Samsung:string="QQQQQQQQQQQQQQQQQQQ";
+
+  p1(data:any):void{
+    console.log(`INSIDE p1 of AppComponent.`);
+    console.log(`adding ${data} to the Cart.`);
+  }
 }

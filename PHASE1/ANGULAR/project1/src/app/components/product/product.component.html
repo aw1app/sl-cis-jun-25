@@ -8,5 +8,6 @@
         <h2 class="product-name box">{{ product.name }}</h2>
         <p class="product-description">{{ product.description }}</p>
         <p class="product-price">${{ product.price }}</p>
+        <button (click)="addToCart(product.name)">ADD TO CART</button>
 
     </div>
