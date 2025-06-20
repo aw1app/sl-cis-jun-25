@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Product } from '../../models/product';
 
 @Component({
@@ -10,6 +10,16 @@ import { Product } from '../../models/product';
 })
 export class ProductComponent {
 
- product:Product= new Product(0,"Mac Laptop", 1000000, "Great Workforce Laptop", true, '');
+  product!: Product;
+
+  @Input("name") name!:string;
+
+  constructor() {
+    this.product = new Product();
+  }
+
+  ngOnInit():void{
+    this.product.name = this.name;
+  }
 
 }
