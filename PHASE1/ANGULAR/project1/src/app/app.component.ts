@@ -17,10 +17,10 @@ export class AppComponent {
   x=1000;
 
  products:Product[] = [
-    new Product(1, "iPhone", 75000, "Great Phone 1", true, 'images/111.png'),
-    new Product(2, "Nokia", 5000, "Simple Phone 2", true, 'images/222.png'),
-    new Product(3, "Samsung", 15000, "Good Phone 3", true, 'images/333.png'),
-    new Product(4, "Motorala", 25000, "Nice Phone 4", false, 'images/444.png')
+    new Product(1, "iPhone", 75000, "Great Phone 1", true, 'images/Apple-Phone.JPG'),
+    new Product(2, "Dell Laptop", 5000, "Simple Phone 2", true, 'images/dell.JPG'),
+    new Product(3, "Samsung", 15000, "Good Phone 3", true, 'images/samsung.png'),
+    new Product(4, "Motorala", 25000, "Nice Phone 4", false, 'images/motorola.png')
   ];
 
   name1:string="Dell Laptop";
