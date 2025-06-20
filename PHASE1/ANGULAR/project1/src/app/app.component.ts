@@ -13,4 +13,7 @@ export class AppComponent {
   title = 'ABC XYZ';
 
   x=1000;
+
+  name1:string="Dell Laptop";
+  price1:number=555;
 }
