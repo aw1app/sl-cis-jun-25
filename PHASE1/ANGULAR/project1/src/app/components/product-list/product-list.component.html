@@ -7,7 +7,7 @@
     </ul> -->
     <br>
 
-    <!-- <table border="1">
+    <table border="1">
         <thead>
             <th>Name</th>
             <th>Price</th>
@@ -21,7 +21,7 @@
 
         </tr>
 
-    </table> -->
+    </table>
 
 
     <hr/>
@@ -30,5 +30,5 @@
     <div *ngFor="let prod of products">
         <product name="{{prod.name}}" [price]="prod.price" [inStock]="prod.inStock" [imagePath]="prod.imagePath"> </product>
     </div>
-    
+
 </div>
