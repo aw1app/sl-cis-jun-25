@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Product } from '../../models/product';
 
 @Component({
   selector: 'product',
@@ -9,7 +10,6 @@ import { Component } from '@angular/core';
 })
 export class ProductComponent {
 
-  name:string="iPhone";
-  price:number=15000;
+ product:Product= new Product(0,"Mac Laptop", 1000000, "Great Workforce Laptop", true, '');
 
 }
