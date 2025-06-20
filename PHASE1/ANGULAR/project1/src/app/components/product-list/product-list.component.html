@@ -1,13 +1,13 @@
 <div style="border: 1px solid red">
     <br>
-    <p>List of Product at Amzn today</p>
+    <p>List of Product at Amzn toda (APPROACH 1 )</p>
 
     <!-- <ul *ngFor="let prod of products">
         <li>{{prod.name}},{{prod.price}}, ,{{prod.description}}</li>
     </ul> -->
     <br>
 
-    <table border="1">
+    <!-- <table border="1">
         <thead>
             <th>Name</th>
             <th>Price</th>
@@ -21,6 +21,14 @@
 
         </tr>
 
-    </table>
+    </table> -->
 
+
+    <hr/>
+    <br>
+    <p>List of Product at Amzn today (APPROACH 2 )</p>
+    <div *ngFor="let prod of products">
+        <product name="{{prod.name}}" [price]="prod.price" [inStock]="prod.inStock" [imagePath]="prod.imagePath"> </product>
+    </div>
+    
 </div>
