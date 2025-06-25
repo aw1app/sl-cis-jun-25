@@ -1,15 +1,18 @@
+<div style="border: 1px dotted rgb(37, 67, 238)">
 
-<div style="border: 1px dotted rgb(37, 67, 238)">  
+    <div *ngIf="product">
 
-<h3>Details of Product {{product.id}}</h3>
+        <h3>Details of Product {{product.id}}</h3>
 
-<ul>
-    <li><b>Title</b>: {{product.title}}</li>
-    <li><b>Price</b>: {{product.price}}</li>
-    <li><b>Available</b>: {{product.availabilityStatus}}</li>
-    <li><b>Quantity</b> : {{product.stock}}</li>
-    <li><b>Description</b>: {{product.description}}</li>
-</ul>
+        <ul>
+            <li><b>Title</b>: {{product.title}}</li>
+            <li><b>Price</b>: {{product.price}}</li>
+            <li><b>Available</b>: {{product.availabilityStatus}}</li>
+            <li><b>Quantity</b> : {{product.stock}}</li>
+            <li><b>Description</b>: {{product.description}}</li>
+        </ul>
 
+    </div>
 
-<div>
+    <div>
+       

@@ -2,11 +2,12 @@ import { Component, Input } from '@angular/core';
 import { ProductV2Service } from '../../services/product-v2.service';
 import { ProductV2 } from '../../models/product-v2';
 import { ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'product-v2',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './product-v2.component.html',
   styleUrl: './product-v2.component.css'
 })
@@ -28,7 +29,7 @@ export class ProductV2Component {
 
 
     this.route.paramMap.subscribe(params => {
-      
+
       const productId = params.get('id');
 
       if (productId !== null) {

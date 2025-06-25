@@ -6,12 +6,14 @@
 
     <table border="1">
         <thead>
+            <th>SL.NO</th>
             <th>Title</th>
             <th>Price</th>
             <th>DETAILS</th>
         </thead>
 
-        <tr *ngFor="let prod of products">
+        <tr *ngFor="let prod of products; index as i;">
+            <td>{{i+1}}</td>
             <td [style.color]="prod.availabilityStatus ==='In Stock'? 'green' : 'grey'"><b>{{prod.title}}</b></td>
             <td [style.color]="prod.price <10000 ? 'grey' : 'orange'">{{prod.price }}</td>
             <td> <a href="/product/{{prod.id}}"> DETAILS</a></td>

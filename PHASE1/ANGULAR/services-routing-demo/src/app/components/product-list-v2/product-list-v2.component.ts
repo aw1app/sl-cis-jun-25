@@ -30,9 +30,8 @@ export class ProductListV2Component {
     );
   }
 
-
+  
   deleteProduct(id: number) {
-    console.log("INSIDE deleteProduct of product list v2", id)
     this.productV2Service.deleteProduct(id);
   }
 
