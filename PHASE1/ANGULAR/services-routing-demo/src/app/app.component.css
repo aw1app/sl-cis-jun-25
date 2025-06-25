@@ -1,0 +1,28 @@
+.horizontal-nav {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end; /* aligns items to the right */
+    gap: 20px;
+    padding: 10px 20px;
+    background-color: #f8f8f8;
+    margin: 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .horizontal-nav li {
+    display: inline;
+  }
+  
+  .horizontal-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .horizontal-nav a:hover {
+    background-color: #e0e0e0;
+  }
+  

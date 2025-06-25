@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { ProductComponent } from './components/product/product.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { Product } from './models/product';
@@ -10,7 +10,7 @@ import { AddProductV2Component } from "./components/add-product-v2/add-product-v
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ProductComponent, ProductListComponent, ProductListV2Component, 
+  imports: [RouterOutlet, RouterLink, ProductComponent, ProductListComponent, ProductListV2Component, 
     ProductV2Component, AddProductV2Component],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

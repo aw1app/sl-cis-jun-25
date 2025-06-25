@@ -1803,6 +1803,14 @@
       "description": "some desc",
       "availabilityStatus": "",
       "stock": 0
+    },
+    {
+      "id": -1,
+      "title": "HP Monitor",
+      "price": "20000",
+      "description": "some desc",
+      "availabilityStatus": "",
+      "stock": 0
     }
   ],
   "total": 194,

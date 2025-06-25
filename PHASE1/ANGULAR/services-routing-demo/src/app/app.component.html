@@ -1,6 +1,12 @@
 <h1 style="text-align:center"> Welcome to Amazon EStore</h1>
+<hr><hr>
+<ul class="horizontal-nav">
+<li><a [routerLink]="['/add-product']" > Add New Product </a> </li>  
+<li> <a [routerLink]="['/list-products']" > Product List </a> </li>
+</ul>
 
-<add-product-v2 />
+
+<!-- <add-product-v2 />
 <hr>
 <product-list-v2 />
 <hr>
@@ -15,6 +21,8 @@
 <product [id]="0" />
 <product [id]="1" />
 <product [id]="2" />
-<product [id]="3" />
+<product [id]="3" /> -->
 
 <br><br><br><br>
+
+<router-outlet></router-outlet>
