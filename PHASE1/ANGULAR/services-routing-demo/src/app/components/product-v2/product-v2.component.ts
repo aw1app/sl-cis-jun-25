@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ProductV2Service } from '../../services/product-v2.service';
 import { ProductV2 } from '../../models/product-v2';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'product-v2',
@@ -10,23 +11,41 @@ import { ProductV2 } from '../../models/product-v2';
   styleUrl: './product-v2.component.css'
 })
 export class ProductV2Component {
-product: any;
+  product: any;
 
-  productV2Service!:ProductV2Service;
-  @Input() id!:number;
+  productV2Service!: ProductV2Service;
+  @Input() id!: number;
 
-  constructor(productV2Service:ProductV2Service){
-    this.productV2Service = productV2Service;    
+  route!: ActivatedRoute;
+
+  constructor(productV2Service: ProductV2Service, route: ActivatedRoute) {
+    this.productV2Service = productV2Service;
+    this.route = route;
   }
 
 
-  ngOnInit():void{
-    this.productV2Service.getProduct(this.id).subscribe(
+  ngOnInit(): void {
 
-      res => this.product = res,
-      err => console.log("Error fetching product with id ", this.id,  err)
 
-    );
+    this.route.paramMap.subscribe(params => {
+      
+      const productId = params.get('id');
+
+      if (productId !== null) {
+        this.id = Number(productId);
+
+        this.productV2Service.getProduct(this.id).subscribe(
+
+          res => this.product = res,
+          err => console.log("Error fetching product with id ", this.id, err)
+
+        );
+
+      }
+
+    });
+
+
   }
 
 
