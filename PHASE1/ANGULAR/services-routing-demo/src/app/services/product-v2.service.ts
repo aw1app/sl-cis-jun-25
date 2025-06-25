@@ -39,5 +39,16 @@ export class ProductV2Service {
     return this.httpClient.get<ProductV2>(this.serverUrl + "/" + id);
   }
 
+  //adding a new product
+  addProduct(prod: ProductV2): void {
+    console.log("INSIDE addProduct() of Productservice V2", prod)
+    this.httpClient.post<ProductV2>(this.serverUrl, prod).subscribe(
+
+      resp =>  this.loadProducts(),
+      error => console.error(error)
+
+    );
+  }
+
 
 }

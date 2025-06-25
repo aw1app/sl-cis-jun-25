@@ -10,10 +10,9 @@ import { ProductV2 } from '../../models/product-v2';
   styleUrl: './product-v2.component.css'
 })
 export class ProductV2Component {
+product: any;
 
   productV2Service!:ProductV2Service;
-  product!:ProductV2;
-
   @Input() id!:number;
 
   constructor(productV2Service:ProductV2Service){
