@@ -12,21 +12,28 @@ import { CommonModule } from '@angular/common';
 })
 export class ProductListV2Component {
 
-  productV2Service!:ProductV2Service;
-  products!:ProductV2[];
 
-  constructor(productV2Service:ProductV2Service){
-    this.productV2Service = productV2Service;    
+  productV2Service!: ProductV2Service;
+  products!: ProductV2[];
+
+  constructor(productV2Service: ProductV2Service) {
+    this.productV2Service = productV2Service;
   }
 
-  
-  ngOnInit():void{
+
+  ngOnInit(): void {
     this.productV2Service.getProducts().subscribe(
 
       res => this.products = res,
       err => console.log("Error fetching product list", err)
 
     );
+  }
+
+
+  deleteProduct(id: number) {
+    console.log("INSIDE deleteProduct of product list v2", id)
+    this.productV2Service.deleteProduct(id);
   }
 
 }

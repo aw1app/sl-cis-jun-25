@@ -15,6 +15,7 @@
             <td [style.color]="prod.availabilityStatus ==='In Stock'? 'green' : 'grey'"><b>{{prod.title}}</b></td>
             <td [style.color]="prod.price <10000 ? 'grey' : 'orange'">{{prod.price }}</td>
             <td> <a href="/product/{{prod.id}}"> DETAILS</a></td>
+            <td> <button (click)="deleteProduct(prod.id)"> DELETE</button></td>
         </tr>
 
     </table>

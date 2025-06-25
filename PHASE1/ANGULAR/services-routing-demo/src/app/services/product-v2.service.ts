@@ -8,7 +8,7 @@ import { Observable } from 'rxjs/internal/Observable';
   providedIn: 'root'
 })
 export class ProductV2Service {
-
+ 
   private serverUrl: string = "http://localhost:5000/products";
 
   private productsSubject = new BehaviorSubject<ProductV2[]>([]);
@@ -49,6 +49,17 @@ export class ProductV2Service {
 
     );
   }
+
+  deleteProduct(id: number) : void {
+    console.log("INSIDE deleteProduct() of Productservice V2", id)
+    this.httpClient.delete(`${this.serverUrl}/${id}`).subscribe(
+
+      resp =>  this.loadProducts(),
+      error => console.error(error)
+
+    );
+  }
+
 
 
 }
