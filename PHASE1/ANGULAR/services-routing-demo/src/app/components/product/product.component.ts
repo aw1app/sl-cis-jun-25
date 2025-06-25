@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product';
 
 @Component({
@@ -11,29 +12,16 @@ import { Product } from '../../models/product';
 export class ProductComponent {
 
   product!: Product;
+  productService! :ProductService;
 
-  @Input("name") name!:string;
-  @Input("price") price!:number;
-  @Input("inStock") inStock!:boolean;
-  @Input("imagePath") imagePath!:string;
+  @Input() id!: number;
 
-  @Output() cartEvent:EventEmitter<string>=new EventEmitter();
-
-  constructor() {
-    this.product = new Product();
-  }
-
- addToCart(pName:string):void{
-  this.cartEvent.emit(pName);
- }
-  
-
+  constructor(productService :ProductService) {
+    this.productService=productService;
+  } 
 
   ngOnInit():void{
-    this.product.name = this.name;
-    this.product.price = this.price;
-    this.product.inStock = this.inStock;
-    this.product.imagePath = this.imagePath;
+    this.product= this.productService.getProduct(this.id);
   }
 
 }

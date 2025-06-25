@@ -67,7 +67,6 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: /* your background */;
     clip-path: polygon(0 50.72px,40px 40px,50.72px 0,calc(100% - 50.72px) 0,calc(100% - 40px) 40px,100% 50.72px,100% calc(100% - 50.72px),calc(100% - 40px) calc(100% - 40px),calc(100% - 50.72px) 100%,50.72px 100%,40px calc(100% - 40px),0 calc(100% - 50.72px),0 50.72px,10px  calc(50.72px + 7.67px),10px calc(100% - 50.72px - 7.67px),calc(40px + 8.16px) calc(100% - 40px - 8.16px),calc(50.72px + 7.67px) calc(100% - 10px),calc(100% - 50.72px - 7.67px) calc(100% - 10px),calc(100% - 40px - 8.16px) calc(100% - 40px - 8.16px),calc(100% - 10px) calc(100% - 50.72px - 7.67px),calc(100% - 10px) calc(50.72px + 7.67px),calc(100% - 40px - 8.16px) calc(40px + 8.16px),calc(100% - 50.72px - 7.67px) 10px,calc(50.72px + 7.67px) 10px,calc(40px + 8.16px) calc(40px + 8.16px),10px calc(50.72px + 7.67px));
   }
   
