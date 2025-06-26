@@ -7,14 +7,18 @@ import Timer from './components/Timer';
 import Product from './components/Product';
 import ProductF from './components/ProductF';
 import ProductListF from './components/ProductListF';
+import CompA from './CompA';
 
 function App() {
   return (
     <div className="App">
-      <h1>
+      <h1 className="App-header" style={{ backgroundColor: "lightblue" }}>
         Welcome to EStore
       </h1>
 
+      <CompA />
+
+      <hr></hr>
       <ProductListF />
 
       <hr />

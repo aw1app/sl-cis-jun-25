@@ -13,15 +13,15 @@ const ProductListF = (props) => {
 
 
     return (
-        <div>
-            <h3> Product List:</h3>
+        <>
+            <h3 > Product List:</h3>
             <table border="1"><thead><td>NAME</td><td>PRICE</td></thead>
             {
                products.map( product =>  <tr> <td> {product.name} </td> <td>  {product.price} </td>  </tr>     ) 
             }
             </table>
 
-        </div>
+        </>
     );
 }
 
