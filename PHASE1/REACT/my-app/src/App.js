@@ -3,6 +3,7 @@ import './App.css';
 import Hello from './components/Hello';
 import HelloV1 from './components/HelloV1';
 import HelloV2 from './components/HelloV2';
+import Timer from './components/Timer';
 
 function App() {
   return (
@@ -11,11 +12,13 @@ function App() {
         Welcome to EStore
       </h1>
 
-      <Hello name="Muralidhar" />
+      <Timer />
+
+      {/* <Hello name="Muralidhar" />
 
       <HelloV1 name="Shastry" />
 
-      <HelloV2 name="Sharda" />
+      <HelloV2 name="Sharda" /> */}
     </div>
   );
 }
