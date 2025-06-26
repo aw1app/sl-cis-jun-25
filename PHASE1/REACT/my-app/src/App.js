@@ -4,6 +4,8 @@ import Hello from './components/Hello';
 import HelloV1 from './components/HelloV1';
 import HelloV2 from './components/HelloV2';
 import Timer from './components/Timer';
+import Product from './components/Product';
+import ProductF from './components/ProductF';
 
 function App() {
   return (
@@ -12,7 +14,13 @@ function App() {
         Welcome to EStore
       </h1>
 
-      <Timer />
+      <Product name="DSP Chip 001" exportLimit="1000" />
+      <Product name="iPhone 2025" exportLimit="80" />
+
+      <ProductF name="Nokia 3010" exportLimit="800" />
+      <ProductF name="Motorola AI Laptop" exportLimit="18" />
+
+      {/* <Timer /> */}
 
       {/* <Hello name="Muralidhar" />
 
