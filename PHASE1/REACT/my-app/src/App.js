@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Hello from './components/Hello';
 import HelloV1 from './components/HelloV1';
+import HelloV2 from './components/HelloV2';
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
       <Hello name="Muralidhar" />
 
       <HelloV1 name="Shastry" />
+
+      <HelloV2 name="Sharda" />
     </div>
   );
 }
