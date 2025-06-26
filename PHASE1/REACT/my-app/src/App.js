@@ -9,16 +9,29 @@ import ProductF from './components/ProductF';
 import ProductListF from './components/ProductListF';
 import CompA from './CompA';
 
+// Context Demo
+import Comp1 from './Comp1';
+import Comp2 from './Comp2';
+import { CountContext, CountProvider } from './contexts/CounterContext';
+import { useContext } from 'react';
+
 function App() {
+  let {  count} = useContext(CountContext);
+
   return (
     <div className="App">
       <h1 className="App-header" style={{ backgroundColor: "lightblue" }}>
-        Welcome to EStore
+        Welcome to EStore {count}
       </h1>
 
+      
+        <Comp1 />
+        <Comp2 />
+
+      <hr />
       <CompA />
 
-      <hr></hr>
+      <hr />
       <ProductListF />
 
       <hr />
