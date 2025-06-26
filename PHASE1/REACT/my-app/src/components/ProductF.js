@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-function ProductF(props) {
+const ProductF = (props) => {
+//function ProductF(props) {
 
     let [seller, setSeller  ] = useState("HP Inc");
     let [name, setName  ] = useState(props.name);

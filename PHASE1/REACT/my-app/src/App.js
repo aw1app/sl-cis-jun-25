@@ -6,6 +6,7 @@ import HelloV2 from './components/HelloV2';
 import Timer from './components/Timer';
 import Product from './components/Product';
 import ProductF from './components/ProductF';
+import ProductListF from './components/ProductListF';
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
         Welcome to EStore
       </h1>
 
+      <ProductListF />
+
+      <hr />
       <Product name="DSP Chip 001" exportLimit="1000" />
       <Product name="iPhone 2025" exportLimit="80" />
 
