@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import Hello from './components/Hello';
 
 function App() {
   return (
@@ -7,6 +8,8 @@ function App() {
       <h1>
         Welcome to EStore
       </h1>
+
+      <Hello />
     </div>
   );
 }
