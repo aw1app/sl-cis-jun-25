@@ -1,5 +1,7 @@
-import { configureStore,  createSlice } from "@reduxjs/toolkit";
+import { configureStore, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
+
+///////// COUNTER SLICE ////////////////////
 const counterSlice = createSlice(
     {
 
@@ -7,7 +9,7 @@ const counterSlice = createSlice(
         initialState: { val: 0 },
 
         reducers: {
-            //actions
+            //synchronous actions
             increment: (state) => { state.val += 1; },
             decrement: (state) => { state.val -= 1; },
         }
@@ -16,14 +18,66 @@ const counterSlice = createSlice(
 
 );
 
-// Exposing the actions to the components.
+// Exposing the synchrounous actions to the components.
 export const { increment, decrement } = counterSlice.actions;
+
+///////// COUNTER SLICE ////////////////////
+
+
+///////// PRODUCTS SLICE ////////////////////
+
+// Async thunk to fetch products from json-server
+export const fetchProducts = createAsyncThunk('products/fetchProducts', async () => {
+    console.log('store : INSIDE fetchProducts ');
+    const response = await fetch('http://localhost:5000/products');
+    const data = await response.json();
+    return data;
+}
+);
+
+const productsSlice = createSlice(
+    {
+
+        name: 'products',
+        initialState: { items: [], error:'', status:'idle'},
+
+        reducers: {
+            //synchronous actions
+        },
+        extraReducers: (builder) => {
+
+            builder
+                .addCase(fetchProducts.pending, (state) => {
+                    console.log('store : INSIDE extraReducers fetchProducts.pending case ');
+                    state.status = 'loading';
+                })
+                .addCase(fetchProducts.fulfilled, (state, action) => { 
+                    console.log('store : INSIDE fetchProducts fetchProducts.fulfilled case ');
+                    state.status = 'succeeded';
+                    state.items = action.payload;
+                })
+                .addCase(fetchProducts.rejected, (state, action) => {
+                    console.log('store : INSIDE fetchProducts fetchProducts.rejected case ');
+                    state.status = 'failed';
+                    state.error = action.error.message;
+                });
+
+        }
+
+    }
+
+);
+
+
+
+///////// PRODUCTS SLICE ////////////////////
 
 
 const store = configureStore(
     {
         reducer: {
             counter: counterSlice.reducer,
+            products: productsSlice.reducer
         },
     }
 );

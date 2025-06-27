@@ -4,6 +4,7 @@ import CompA from './components/CompA.jsx'
 import CompB from './components/CompB.jsx'
 import {useSelector, useDispatch } from 'react-redux'
 import ProductList from './components/ProductList.jsx'
+import ProductListRedux from './components/ProductListRedux.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,7 +16,9 @@ function App() {
     <>
       <h1>Welcome to Estore val={val}</h1>
 
-      <ProductList />
+      <ProductListRedux />
+
+      {/* <ProductList /> */}
 
       {/* <CompA />
 
