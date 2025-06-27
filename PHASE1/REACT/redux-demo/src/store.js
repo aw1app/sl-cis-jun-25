@@ -16,6 +16,7 @@ const counterSlice = createSlice(
 
 );
 
+// Exposing the actions to the components.
 export const { increment, decrement } = counterSlice.actions;
 
 
