@@ -49,6 +49,19 @@ export const addProduct = createAsyncThunk('products/addProduct', async (newProd
 );
 
 
+export const deleteProduct = createAsyncThunk('products/deleteProduct', async (productId) => {
+
+    const res = await fetch(`http://localhost:5000/products/${productId}`, {
+        method: 'DELETE',
+    });
+    if (res.ok) {       
+        return productId; // Return the deleted product ID
+    } else {
+        throw new Error('Failed to delete product');
+    }
+}
+);
+
 
 const productsSlice = createSlice(
     {
@@ -79,6 +92,10 @@ const productsSlice = createSlice(
                 .addCase(addProduct.fulfilled, (state, action) => {
                     state.status = 'add-product-succeeded';
                     state.items.push(action.payload);
+                })
+                .addCase(deleteProduct.fulfilled, (state, action) => {
+                    state.status = 'delete-product-succeeded';
+                    state.items.filter( product  => product.id != action.payload);
                 })
                 ;
 

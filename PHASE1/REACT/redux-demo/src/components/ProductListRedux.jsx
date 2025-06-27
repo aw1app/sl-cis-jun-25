@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts } from "../store";
+import { deleteProduct, fetchProducts } from "../store";
 
 
 const ProductListRedux = (props) => {
@@ -12,8 +12,8 @@ const ProductListRedux = (props) => {
     useEffect(
 
         () => {
-           
-            if (status === 'idle') dispatch(fetchProducts())
+
+            if (status === 'idle' || status === 'delete-product-succeeded' ) dispatch(fetchProducts())
 
         },
 
@@ -29,21 +29,31 @@ const ProductListRedux = (props) => {
         return <p>Error fetching products data error: {error}</p>;
     }
 
+    const deleteProd = (id)=>{
+        dispatch( deleteProduct(id));
+    }
 
     return (
         <>
             <h3 > Product List:</h3>
-            <table border="1"><thead><tr><td>NAME</td><td>PRICE</td></tr></thead><tbody>
+            <table border="1"><thead><tr><td>NAME</td><td>PRICE</td><td>DELETE</td></tr></thead><tbody>
                 {
                     items &&
                     (
                         items.length === 0 ? <tr><td> No Products to display </td></tr> :
 
-                            items.map( (product,key) => <tr><td>{product.title}</td><td>{product.price} </td></tr>)
+                            items.map(
+                                (product, key) =>
+                                    <tr>
+                                        <td>{product.title}</td>
+                                        <td>{product.price} </td>
+                                        <td><button onClick={ () => deleteProd( product.id )}> DELETE </button> </td>
+                                    </tr>
+                            )
 
                     )
                 }
-           </tbody></table>
+            </tbody></table>
 
         </>
     );
