@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 const Header = () => {
     return (
         <header style={{
-            padding: '10px',
+            padding: '1px',
             backgroundColor: '#282c34',
             color: 'white',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center'
         }}>
-            <h2>EStore Products Store</h2>
+            <h2>EStore Products</h2>
             <br />
             
             <nav>
