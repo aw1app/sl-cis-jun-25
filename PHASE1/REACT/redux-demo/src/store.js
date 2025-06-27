@@ -28,18 +28,33 @@ export const { increment, decrement } = counterSlice.actions;
 
 // Async thunk to fetch products from json-server
 export const fetchProducts = createAsyncThunk('products/fetchProducts', async () => {
-    console.log('store : INSIDE fetchProducts ');
     const response = await fetch('http://localhost:5000/products');
     const data = await response.json();
     return data;
 }
 );
 
+export const addProduct = createAsyncThunk('products/addProduct', async (newProduct) => {
+
+    const res = await fetch('http://localhost:5000/products', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newProduct),
+    });
+
+    const data = await res.json();
+    return data;
+
+}
+);
+
+
+
 const productsSlice = createSlice(
     {
 
         name: 'products',
-        initialState: { items: [], error:'', status:'idle'},
+        initialState: { items: [], error: '', status: 'idle' },
 
         reducers: {
             //synchronous actions
@@ -51,7 +66,7 @@ const productsSlice = createSlice(
                     console.log('store : INSIDE extraReducers fetchProducts.pending case ');
                     state.status = 'loading';
                 })
-                .addCase(fetchProducts.fulfilled, (state, action) => { 
+                .addCase(fetchProducts.fulfilled, (state, action) => {
                     console.log('store : INSIDE fetchProducts fetchProducts.fulfilled case ');
                     state.status = 'succeeded';
                     state.items = action.payload;
@@ -60,7 +75,12 @@ const productsSlice = createSlice(
                     console.log('store : INSIDE fetchProducts fetchProducts.rejected case ');
                     state.status = 'failed';
                     state.error = action.error.message;
-                });
+                })
+                .addCase(addProduct.fulfilled, (state, action) => {
+                    state.status = 'add-product-succeeded';
+                    state.items.push(action.payload);
+                })
+                ;
 
         }
 
