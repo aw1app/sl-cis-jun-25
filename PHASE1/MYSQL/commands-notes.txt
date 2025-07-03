@@ -1,0 +1,68 @@
+# 1. CREATE and DROP databases
+
+
+mysql> CREATE DATABASE CIS_ESTORE;
+Query OK, 1 row affected (0.18 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| cis_estore         |
+| cms                |
+| ecommerce          |
+| ecommercedb        |
+| ecomstore          |
+| estore             |
+| information_schema |
+| my_estore          |
+| mysql              |
+| performance_schema |
+| sys                |
+| testdb             |
++--------------------+
+12 rows in set (0.04 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| cis_estore         |
+| cis_estore_2       |
+| cms                |
+| ecommerce          |
+| ecommercedb        |
+| ecomstore          |
+| estore             |
+| information_schema |
+| my_estore          |
+| mysql              |
+| performance_schema |
+| sys                |
+| testdb             |
++--------------------+
+13 rows in set (0.00 sec)
+
+mysql> DROP DATABASE CIS_ESTORE_2;
+Query OK, 0 rows affected (0.56 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| cis_estore         |
+| cms                |
+| ecommerce          |
+| ecommercedb        |
+| ecomstore          |
+| estore             |
+| information_schema |
+| my_estore          |
+| mysql              |
+| performance_schema |
+| sys                |
+| testdb             |
++--------------------+
+12 rows in set (0.00 sec)
+
+mysql>
