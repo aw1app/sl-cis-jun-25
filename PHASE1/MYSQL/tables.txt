@@ -79,3 +79,40 @@ mysql> SELECT * FROM Persons;
 1 row in set (0.00 sec)
 
 mysql>
+
+##### Delete all data, but keep the table structure intact
+
+mysql> SELECT * FROM Persons;
++----------+----------+-----------+-------------------------+------+
+| PersonID | LastName | FirstName | Address                 | City |
++----------+----------+-----------+-------------------------+------+
+|        2 | Krishna  | Manohar   | 273 Vendor Street, IND  | KOL  |
+|        3 | Sharma   | Sudheer   | 2234 Vendor Street, IND | KOL  |
++----------+----------+-----------+-------------------------+------+
+2 rows in set (0.00 sec)
+
+mysql> TRUNCATE table Persons;
+Query OK, 0 rows affected (0.89 sec)
+
+mysql> SELECT * FROM Persons;
+Empty set (0.00 sec)
+
+mysql>
+
+##### Delete the table structure itself along with its data. DROP command
+mysql> SELECT * FROM Persons;
++----------+----------+-----------+-------------------------+------+
+| PersonID | LastName | FirstName | Address                 | City |
++----------+----------+-----------+-------------------------+------+
+|        3 | Sharma   | Sudheer   | 2234 Vendor Street, IND | KOL  |
+|        4 | Bala     | Madhu     | 200 Vendor Street, IND  | KOL  |
++----------+----------+-----------+-------------------------+------+
+2 rows in set (0.00 sec)
+
+mysql> DROP table Persons;
+Query OK, 0 rows affected (0.27 sec)
+
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql>
