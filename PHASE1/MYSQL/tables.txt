@@ -19,3 +19,48 @@ mysql> show tables;
 1 row in set (0.00 sec)
 
 mysql>
+
+
+# DATA INSERTION
+
+mysql> SELECT * FROM Persons;
++----------+----------+-----------+-------------+------+
+| PersonID | LastName | FirstName | Address     | City |
++----------+----------+-----------+-------------+------+
+|        1 | Krishna  | Murli     | 23 HYD, IND | HYD  |
++----------+----------+-----------+-------------+------+
+1 row in set (0.00 sec)
+
+mysql> INSERT INTO Persons values ( 2, 'Krishna', 'Manohar', '273 Vendor Street, IND', 'KOL');
+Query OK, 1 row affected (0.10 sec)
+
+mysql> SELECT * FROM Persons;
++----------+----------+-----------+------------------------+------+
+| PersonID | LastName | FirstName | Address                | City |
++----------+----------+-----------+------------------------+------+
+|        1 | Krishna  | Murli     | 23 HYD, IND            | HYD  |
+|        2 | Krishna  | Manohar   | 273 Vendor Street, IND | KOL  |
++----------+----------+-----------+------------------------+------+
+2 rows in set (0.00 sec)
+
+mysql>
+
+
+#UPDATING DATA. Execute the following on your mysql terminal.
+#Update data
+USE CIS_ESTORE;
+
+UPDATE Persons
+SET LastName = 'Mohan' , city = 'MEERUT'
+WHERE PersonID=1;
+
+mysql> SELECT * FROM Persons;
++----------+----------+-----------+------------------------+--------+
+| PersonID | LastName | FirstName | Address                | City   |
++----------+----------+-----------+------------------------+--------+
+|        1 | Mohan    | Murli     | 23 HYD, IND            | MEERUT |
+|        2 | Krishna  | Manohar   | 273 Vendor Street, IND | KOL    |
++----------+----------+-----------+------------------------+--------+
+2 rows in set (0.00 sec)
+
+mysql>
