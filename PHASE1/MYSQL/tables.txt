@@ -64,3 +64,18 @@ mysql> SELECT * FROM Persons;
 2 rows in set (0.00 sec)
 
 mysql>
+
+
+# DELETING Table DATA
+mysql> DELETE FROM Persons WHERE city = 'MEERUT';
+Query OK, 1 row affected (0.14 sec)
+
+mysql> SELECT * FROM Persons;
++----------+----------+-----------+------------------------+------+
+| PersonID | LastName | FirstName | Address                | City |
++----------+----------+-----------+------------------------+------+
+|        2 | Krishna  | Manohar   | 273 Vendor Street, IND | KOL  |
++----------+----------+-----------+------------------------+------+
+1 row in set (0.00 sec)
+
+mysql>
