@@ -14,7 +14,24 @@ public class ArraysDemo {
 		System.out.println("Looping through the full array:");
 		for (int i = 0; i < myArray.length; i++) {
 			System.out.print(myArray[i] + "\t");
+		};
+		
+		
+		// 2d array of size 2 x 5
+		System.out.println("\n2d array");
+		int[][] numbers = {
+				 {1, 2, 3, 4, 5},
+				 {11, 12, 13, 14, 15}
+				 };
+		
+		// How do loop thru the above array and print all the data (10 data points)
+		for (int i = 0; i < numbers.length; i++) {
+			 for(int j = 0; j < numbers[i].length; j++) {
+			 System.out.print(numbers[i][j] + "\t");
+			 }
+			 System.out.println("");
 		}
+		
 
 	}
 
