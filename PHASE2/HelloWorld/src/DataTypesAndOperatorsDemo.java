@@ -1,3 +1,9 @@
+// this is a single line comment https://github.com/aw1app/sl-cis-jun-25
+/* 
+ * This is a multi line 
+ * comment
+ */
+
 
 public class DataTypesAndOperatorsDemo {
 
