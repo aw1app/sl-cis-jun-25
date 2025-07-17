@@ -9,7 +9,7 @@ public class Pilot {
 
 	// behaviours
 	boolean fly(Plane plane) {
-
+		return false;
 	}
 
 	String display() {
