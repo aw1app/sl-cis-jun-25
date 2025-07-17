@@ -1,5 +1,6 @@
 package staff;
 
+import logistics.Plane;
 
 public class Pilot {
 	// Properties or feilds
@@ -9,14 +10,51 @@ public class Pilot {
 
 	int yearOfExperience;
 
+	public Pilot() {
+	}
+
+	public Pilot(String name, float age, String pilotID, int yearOfExperience) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.pilotID = pilotID;
+		this.yearOfExperience = yearOfExperience;
+	}
+
 	// behaviours
-	boolean fly(Plane plane) {
+	public boolean fly(Plane plane) {
+
 		return false;
 	}
 
-	String display() {
-		return "Pilot details : " + this.name + "; " + this.pilotID + "; " + this.yearOfExperience;
+	// getters and setters
 
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getYearOfExperience() {
+		return yearOfExperience;
+	}
+
+	public void setYearOfExperience(int yearOfExperience) {
+		this.yearOfExperience = yearOfExperience;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public float getAge() {
+		return age;
+	}
+
+	public String getPilotID() {
+		return pilotID;
+	}
+
+	public String details() {
+		return "Pilot details : " + this.name + "; " + this.pilotID + "; " + this.yearOfExperience;
 	}
 
 }
