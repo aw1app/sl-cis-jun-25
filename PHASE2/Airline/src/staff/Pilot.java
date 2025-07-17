@@ -1,3 +1,5 @@
+package staff;
+
 
 public class Pilot {
 	// Properties or feilds
