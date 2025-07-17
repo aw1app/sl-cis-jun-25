@@ -30,8 +30,14 @@ public class AirlineLauncher {
 		System.out.println(pilots[1].details());
 
 		System.out.println("\n ContractorPilot Details");
-		ContractorPilot cPilot = new ContractorPilot("Sushant", 25, "ER23456", 4, 2);
+		ContractorPilot cPilot = new ContractorPilot("Sushant", 25, "IR56667", 7, 2);
 		System.out.println(cPilot.details());
+		
+		// demo of polymorphism
+		pilots[2] = new ContractorPilot("Mallaih Gowda", 45, "MR44402", 14, 3);
+		
+		System.out.println(pilots[2].details()); //?? will call ContractorPilot's details
+		
 	}
 
 }
