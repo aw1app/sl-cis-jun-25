@@ -19,7 +19,7 @@ public class MultiThreadingDemo {
 		t3.start();
 
 		// Main thread
-		for (int i = 0; i < 200; i++) {
+		for (int i = 0; i < 100; i++) {
 			System.out.println(Thread.currentThread().getName() + " " + i);
 			
 			// sleep for 100 ms after printing every number above
