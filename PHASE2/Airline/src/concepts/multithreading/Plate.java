@@ -3,7 +3,7 @@ package concepts.multithreading;
 public class Plate {
 	
 	// Item here is either Dosa or Roti, that is being produced by the Chefs
-	public void addItem(String item) {	
+	synchronized  public void addItem(String item) {	
 		
 		for (int i = 0; i < 10; i++) {
 			
