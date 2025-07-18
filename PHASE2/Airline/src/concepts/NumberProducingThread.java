@@ -7,7 +7,7 @@ public class NumberProducingThread extends Thread {
 
 		for (int i = 0; i < 100; i++) {
 
-			System.out.println(this.getName() + " i = "+i);
+			System.out.println(Thread.currentThread().getName()  + " i = "+i);
 		}
 
 	}

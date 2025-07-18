@@ -1,6 +1,7 @@
 package exec;
 
 import concepts.NumberProducingThread;
+import concepts.NumberProducingThreadUsingRunnable;
 
 public class MultiThreadingDemo {
 
@@ -12,9 +13,14 @@ public class MultiThreadingDemo {
 		t1.start();
 		t2.start();
 		
+		NumberProducingThreadUsingRunnable rt1 = new NumberProducingThreadUsingRunnable();
+		Thread t3= new Thread(rt1);
+		
+		t3.start();
+		
 		// Main thread
 		for(int i=0;i<200;i++) {
-			System.out.println("Main thread "+ i);
+			System.out.println(Thread.currentThread().getName()  +" " + i);
 		}
 
 	}
