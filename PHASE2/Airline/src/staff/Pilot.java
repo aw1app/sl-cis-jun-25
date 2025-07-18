@@ -1,5 +1,6 @@
 package staff;
 
+import exceptions.PlaneNotFoundException;
 import logistics.Plane;
 
 public class Pilot {
@@ -22,7 +23,9 @@ public class Pilot {
 	}
 
 	// behaviours
-	public boolean fly(Plane plane) {
+	public boolean fly(Plane plane) throws PlaneNotFoundException{
+		
+		if (plane == null ) throw new PlaneNotFoundException("plane object was null");
 
 		return false;
 	}

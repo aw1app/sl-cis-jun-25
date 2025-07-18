@@ -1,5 +1,6 @@
 package exec;
 
+import exceptions.PlaneNotFoundException;
 import logistics.Plane;
 import staff.ContractorPilot;
 import staff.Pilot;
@@ -37,6 +38,15 @@ public class AirlineLauncher {
 		pilots[2] = new ContractorPilot("Mallaih Gowda", 45, "MR44402", 14, 3);
 		
 		System.out.println(pilots[2].details()); //?? will call ContractorPilot's details
+		
+		
+		// Pilot no 2 Fatema is flying the 1st plane Bharat Express
+		try {
+			pilots[1].fly( planes[0] );
+		} catch (PlaneNotFoundException e) {
+			
+			System.out.println(e.getMessage());
+		}
 		
 	}
 
