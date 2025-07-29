@@ -21,10 +21,10 @@ function App() {
       <Header />
 
       <div style={{ padding: '20px' }}>
+
         <Routes>
           <Route path="/" element={<ProductListRedux />} />
           <Route path="/add-product" element={<ProductForm />} />
-
         </Routes>
 
       </div>
