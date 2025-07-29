@@ -99,7 +99,9 @@ Empty set (0.00 sec)
 
 mysql>
 
-##### Delete the table structure itself along with its data. DROP command
+################################################################################
+##### Delete the table structure itself along with its data. DROP command #####
+################################################################################
 mysql> SELECT * FROM Persons;
 +----------+----------+-----------+-------------------------+------+
 | PersonID | LastName | FirstName | Address                 | City |
@@ -115,4 +117,35 @@ Query OK, 0 rows affected (0.27 sec)
 mysql> show tables;
 Empty set (0.00 sec)
 
+mysql>
+
+
+### ALTER Table structure
+CREATE TABLE People (id int, name varchar(80));
+
+mysql> describe People;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| name  | varchar(80) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.12 sec)
+
+
+mysql> ALTER TABLE People ADD Email varchar(80);
+Query OK, 0 rows affected (0.77 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> describe People;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| name  | varchar(80) | YES  |     | NULL    |       |
+| Email | varchar(80) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql>
 mysql>
