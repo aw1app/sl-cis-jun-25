@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class JDBCDemo {
+public class JDBCQueryDemo {
 
 	public static void main(String[] args) {
 
@@ -40,7 +40,6 @@ public class JDBCDemo {
 				int managerId = rs.getInt("ManagerID");
 
 				System.out.println("ID=" + empId + ", NAME = " + empName + ", ManagerID=" + managerId);
-
 			}
 
 		} catch (SQLException e) {
