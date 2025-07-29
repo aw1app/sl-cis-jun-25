@@ -29,12 +29,12 @@ public class JDBCInsertDemo {
 		;
 
 		// STEP 3 : Execute SQL statements and process the result.
-		String sqlCommand = "INSERT INTO employees (EmployeeID, Name, ManagerID) VALUES(7, 'Suman', 2);";
+		String sqlCommand = "INSERT INTO employees (EmployeeID, Name, ManagerID) VALUES (9, 'Suman9', 2),  (10, 'Suman10', 1);";
 		
 		try {
 			int count = stmt.executeUpdate(sqlCommand);
 
-			System.out.println("Successfully inserted " + count + "row(s)");
+			System.out.println("Successfully inserted " + count + " row(s)");
 
 		} catch (SQLException e) {
 			System.out.println(e);
