@@ -34,7 +34,7 @@ public class JDBCUpdateDemo {
 		try {
 			int count = stmt.executeUpdate(sqlCommand);
 
-			System.out.println("Successfully inserted " + count + " row(s)");
+			System.out.println("Successfully updated " + count + " row(s)");
 
 		} catch (SQLException e) {
 			System.out.println(e);
