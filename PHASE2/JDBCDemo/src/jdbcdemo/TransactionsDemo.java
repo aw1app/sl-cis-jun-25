@@ -38,7 +38,7 @@ public class TransactionsDemo {
 
 			savePoint1 = connection.setSavepoint("AfterSuman14");
 
-			// add 2nd employees
+			// add 2nd employees, deliberately make it fail by creating a name larger than the column can hold (50 chars)
 			pStmt.setInt(1, 15);
 			pStmt.setString(2,
 					"Suman150000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000015");
