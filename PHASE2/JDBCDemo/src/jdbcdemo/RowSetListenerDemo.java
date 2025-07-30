@@ -36,7 +36,7 @@ public class RowSetListenerDemo {
 
 		System.out.println("Before update: " + rowSet.getString("Name"));
 
-		rowSet.updateString("Name", "QQQQQQQQQQQQ");
+		rowSet.updateString("Name", "TTTTTT");
 
 		rowSet.updateRow(); // triggers rowChanged event
 		rowSet.acceptChanges(connection); // sync up the changes with the DB.
