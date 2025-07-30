@@ -32,7 +32,7 @@ public class JDBCRowsetDemo {
 			int empId = rowSet.getInt("EmployeeID");
 			String empName = rowSet.getString("Name");
 			int managerId = rowSet.getInt("ManagerID");
-			
+
 //			if (empName.equals("Suman10")){
 //				String nameChanged = "Sumitra10";
 //				rowSet.updateString("Name", nameChanged);
@@ -43,17 +43,28 @@ public class JDBCRowsetDemo {
 
 			System.out.println("ID=" + empId + ", NAME = " + empName + ", ManagerID=" + managerId);
 
-		};
-		
-		
+		}
+		;
+
 		// Using rowset object we can go to a particular row.
-		System.out.println(" -- Using rowset object we can go to a particular row --");
+		System.out.println("\n\n -- Using rowset object we can go to a particular row --");
 		rowSet.absolute(5);
 		int empId = rowSet.getInt("EmployeeID");
 		String empName = rowSet.getString("Name");
 		int managerId = rowSet.getInt("ManagerID");
 		System.out.println("ID=" + empId + ", NAME = " + empName + ", ManagerID=" + managerId);
+
+		// Insert a new row 		
+		rowSet.moveToInsertRow();
+		System.out.println("\n\n -- Using rowset object  Insert a new row  demo --");
+		rowSet.updateInt("EmployeeID", 101);   
+		rowSet.updateString("Name", "Ramesh Kumar");
+		rowSet.updateInt("ManagerID", 3); 
 		
+		rowSet.insertRow(); // Inserts the row into the table
+		rowSet.moveToCurrentRow(); // Return to the current row
+
+		System.out.println("New employee inserted.");
 		
 
 	}
