@@ -16,18 +16,23 @@ public class App {
 //		dbOps.insertCustomer(c1);
 
 		// Demo inserting many customer in one go.
-		List<Customer> customers = new ArrayList<>();
-
-		customers.add(
-				new Customer("John Watson 1", "+91 999999 11111", "john1@example.com", 98.41f, new Date(), new Date()));
-		customers.add(
-				new Customer("John Watson 2", "+91 999999 11112", "john2@example.com", 98.42f, new Date(), new Date()));
-		customers.add(
-				new Customer("John Watson 3", "+91 999999 11113", "john3@example.com", 98.43f, new Date(), new Date()));
-		customers.add(
-				new Customer("John Watson 4", "+91 999999 11114", "john4@example.com", 98.44f, new Date(), new Date()));
+//		List<Customer> customers = new ArrayList<>();
+//
+//		customers.add(
+//				new Customer("John Watson 1", "+91 999999 11111", "john1@example.com", 98.41f, new Date(), new Date()));
+//		customers.add(
+//				new Customer("John Watson 2", "+91 999999 11112", "john2@example.com", 98.42f, new Date(), new Date()));
+//		customers.add(
+//				new Customer("John Watson 3", "+91 999999 11113", "john3@example.com", 98.43f, new Date(), new Date()));
+//		customers.add(
+//				new Customer("John Watson 4", "+91 999999 11114", "john4@example.com", 98.44f, new Date(), new Date()));
+//		
+//		dbOps.insertCustomers(customers);
 		
-		dbOps.insertCustomers(customers);
+		
+		//Read the customers
+		List<Customer> customerList =  dbOps.getAllCustomers();
+		customerList.forEach( cust -> System.out.println ( cust.toString() ) );
 
 	}
 
