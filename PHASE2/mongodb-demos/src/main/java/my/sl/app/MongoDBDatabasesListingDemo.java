@@ -22,8 +22,7 @@ public class MongoDBDatabasesListingDemo {
 		dbs.forEach(  db -> System.out.println(db) );
 		
 		
-		mongoClient.close();
-		
+		mongoClient.close();	
 		
 	}
 
