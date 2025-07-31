@@ -28,18 +28,23 @@ public class App {
 //				new Customer("John Watson 4", "+91 999999 11114", "john4@example.com", 98.44f, new Date(), new Date()));
 //		
 //		dbOps.insertCustomers(customers);
-		
-		
-		//Read the customers
-		System.out.println ("Read all customers");
-		List<Customer> customerList =  dbOps.getAllCustomers();
-		customerList.forEach( cust -> System.out.println ( cust.toString() ) );
-		
-		System.out.println ("\n Find customer with a particular email \"john2@example.com\"" );
+
+		// Read the customers
+		System.out.println("Read all customers");
+		List<Customer> customerList = dbOps.getAllCustomers();
+		customerList.forEach(cust -> System.out.println(cust.toString()));
+
+		System.out.println("\n Find customer with a particular email \"john2@example.com\"");
 		Customer custWithEmail = dbOps.getCustomerByEmail("john2@example.com");
-		System.out.println ( custWithEmail.toString() ) ;
-		
-		
+		System.out.println(custWithEmail.toString());
+
+		// Update customer with Email ID : john2@example.com , set it name to AAAZZZ
+		dbOps.updateCustomer("john2@example.com", "name", "AAAZZZ");
+
+		// Read the customers
+		System.out.println("Read all customers after update above ");
+		customerList = dbOps.getAllCustomers();
+		customerList.forEach(cust -> System.out.println(cust.toString()));
 
 	}
 

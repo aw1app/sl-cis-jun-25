@@ -4,12 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.bson.Document;
+import org.bson.conversions.Bson;
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
+import com.mongodb.client.model.FindOneAndUpdateOptions;
+import com.mongodb.client.model.ReturnDocument;
+import com.mongodb.client.model.Updates;
 
 public class DBOperations {
 
@@ -96,5 +100,31 @@ public class DBOperations {
 	        
 	        return customer;
 	  }
+	  
+	  
+	  //Update ops
+	  public void updateCustomer(String email, String key, String value) {
+		  
+		  Bson filter = Filters.eq("email", email);
+		  
+		  Bson updateOperation = Updates.set(key, value); // Use Updates.set to change a field's value
+		  
+		  FindOneAndUpdateOptions options = new FindOneAndUpdateOptions().returnDocument(ReturnDocument.AFTER);
+          Document updatedDocument = collection.findOneAndUpdate(filter, updateOperation, options);
+
+          System.out.println("Document Updated for email " + email);
+          
+          if (updatedDocument != null) {
+              System.out.println("Updated Version of Document is: " + updatedDocument.toJson());
+          } else {
+              System.out.println("No document found to update for email: " + email);
+          }
+	
+	  }
+	  
+	  
+	  //Upsert ops
+	  
+	  //Delete ops
 
 }
