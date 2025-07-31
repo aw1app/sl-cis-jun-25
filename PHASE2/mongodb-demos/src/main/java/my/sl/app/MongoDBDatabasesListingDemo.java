@@ -4,11 +4,11 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoIterable;
 
-public class MongoDBDemo {
+public class MongoDBDatabasesListingDemo {
 
 	public static void main(String[] args) {
 		
-		System.out.println("Hello MongoDB");
+		System.out.println("List of databases");
 		
 		// Connect to local MongoDB
 		
