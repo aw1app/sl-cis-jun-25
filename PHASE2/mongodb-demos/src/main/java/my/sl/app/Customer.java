@@ -2,6 +2,8 @@ package my.sl.app;
 
 import java.util.Date;
 
+import org.bson.Document;
+
 public class Customer {
 
 	private String name;
@@ -88,7 +90,28 @@ public class Customer {
 	}
 	
 	
-	// Getter and Setters
+	 // --- Other Methods ---
+
+    @Override
+    public String toString() {
+        return "Customer [name=" + name + ", phone=" + phone + ", email=" + email + ", temperature=" + temperature
+                + ", intime=" + intime + ", outtime=" + outtime + "]";
+    }
+
+    // Method to convert Customer object to MongoDB Document
+    public Document getDocument() {
+        Document document = new Document();
+        // document.append("_id", new ObjectId()); // MongoDB automatically creates _id, so we can comment this out
+        document.append("name", this.name);
+        document.append("phone", phone);
+        document.append("email", email);
+        document.append("temperature", temperature);
+        document.append("intime", intime);
+        document.append("outtime", outtime);
+        return document;
+    }
+	
+	
 	
 
 }
