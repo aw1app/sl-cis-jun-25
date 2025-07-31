@@ -9,6 +9,7 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
 
 public class DBOperations {
 
@@ -85,5 +86,15 @@ public class DBOperations {
 		  
 		  return customers;
 	}
+	
+	  public Customer getCustomerByEmail(String email) {
+	        Customer customer = null;
+	        
+	        Document document  =  collection.find( Filters.eq("email", email)  ) .first();
+	        
+	        customer = convertDocumentToCustomer(document);
+	        
+	        return customer;
+	  }
 
 }

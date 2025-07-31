@@ -31,8 +31,15 @@ public class App {
 		
 		
 		//Read the customers
+		System.out.println ("Read all customers");
 		List<Customer> customerList =  dbOps.getAllCustomers();
 		customerList.forEach( cust -> System.out.println ( cust.toString() ) );
+		
+		System.out.println ("\n Find customer with a particular email \"john2@example.com\"" );
+		Customer custWithEmail = dbOps.getCustomerByEmail("john2@example.com");
+		System.out.println ( custWithEmail.toString() ) ;
+		
+		
 
 	}
 
