@@ -12,9 +12,13 @@ public class MongoDBDatabasesListingDemo {
 		
 		// Connect to local MongoDB
 		
-		String localDBURL ="mongodb://localhost:27017";
+		//String localDBURL ="mongodb://localhost:27017";
 		
-		MongoClient mongoClient = MongoClients.create(localDBURL);
+		System.out.println("List of databases in the MongoDB cloud Atlas ");
+		
+		String AtlasDBURL = "mongodb+srv://user1:XXXXXXX@cluster0.ixxay.mongodb.net";
+		
+		MongoClient mongoClient = MongoClients.create(AtlasDBURL);
 		
 		
 		MongoIterable<String> dbs = mongoClient.listDatabaseNames();
