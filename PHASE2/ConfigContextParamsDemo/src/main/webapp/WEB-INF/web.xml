@@ -9,6 +9,13 @@
 
 	</welcome-file-list>
 
+	<!-- context parameters are accessible in all servlets of the project -->
+	<context-param>
+		<param-name>dbuser-name</param-name>
+		<param-value>root</param-value>
+	</context-param>
+
+	<!-- SellerServlet -->
 	<servlet>
 		<servlet-name>SellerServlet</servlet-name>
 		<servlet-class>com.sl.SellerServlet</servlet-class>
@@ -22,6 +29,24 @@
 		<servlet-name>SellerServlet</servlet-name>
 		<url-pattern>/seller</url-pattern>
 	</servlet-mapping>
+
+
+	<!-- InfoServlet -->
+	<servlet>
+		<servlet-name>InfoServlet</servlet-name>
+		<servlet-class>com.sl.InfoServlet</servlet-class>
+		<init-param>
+			<param-name>company-info</param-name>
+			<param-value>Publicly traded company with $100 revenue</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>InfoServlet</servlet-name>
+		<url-pattern>/info</url-pattern>
+	</servlet-mapping>
+
+
 
 
 </web-app>
