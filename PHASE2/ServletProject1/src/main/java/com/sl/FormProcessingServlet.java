@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
 
 @WebServlet("/form-process")
 public class FormProcessingServlet extends HttpServlet {
@@ -21,8 +22,13 @@ public class FormProcessingServlet extends HttpServlet {
 		
 		String userName = request.getParameter("username");
 		String password = request.getParameter("password");
+		
+		// checkboxes processing
+		String[] userTypes = request.getParameterValues("user-type");
 
-		out.println(" You are " + userName + " and you typed password " +password );
+		out.println(" You are <b>" + userName + "</b> and you typed password " +password );
+		out.println("<br>");
+		out.println(" You are user of the type : " + Arrays.toString(userTypes) );
 
 		out.close();
 

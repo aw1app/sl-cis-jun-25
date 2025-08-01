@@ -8,11 +8,20 @@
 
 	<h2 style="text-align: center">User Login</h2>
 
-	<form action="/form-process" method="post">
+	<form action="form-process" method="post">
 
 		User Name: <input type="text" name="username"> <br>
 		<br> Password: <input type="password" name="password"> <br>
-		<br> <input type="submit">
+		<br> 
+		
+		User Type: 
+		<input type="checkbox" name="user-type" value="corp-user"> Corporate User
+		<input type="checkbox" name="user-type"  value="retail-user"> Retail User
+		<input type="checkbox" name="user-type"  value="nri-user"> NRI 
+		<input type="checkbox" name="user-type"  value="employee-user"> Employee of this company 
+		
+		
+		<br><br> <input type="submit">
 
 
 	</form>
