@@ -23,7 +23,7 @@ public class VotingServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();			
 
 		out.println("<h2> You are eligible to Vote </h2>");
-		out.println("<h3> You are voting slip from City Hall.</h3>");
+		out.println("<h3> You can collect voting slip from City Hall.</h3>");
 
 		out.close();
 
