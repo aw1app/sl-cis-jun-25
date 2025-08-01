@@ -17,18 +17,20 @@ public class HelloWorld extends HttpServlet {
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		response.setContentType("text/html");
+		
 		PrintWriter out = response.getWriter();
 		
-		out.println("Hello World and Hello India");
+		out.println("<h1>Hello World and Hello India</h1>");
 		
 		out.close();
 		
 	}
 
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		doGet(request, response);
-	}
+//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		
+//		doGet(request, response);
+//	}
 
 }
