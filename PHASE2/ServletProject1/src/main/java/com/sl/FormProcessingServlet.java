@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Arrays;
 
-@WebServlet("/form-process")
+
 public class FormProcessingServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
