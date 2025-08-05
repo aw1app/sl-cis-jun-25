@@ -2,6 +2,7 @@ package com.sl;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -29,7 +30,18 @@ public class ServletB extends HttpServlet {
 		// Response from Servlet B
 		out.println(" <h1> Welcome to Amazon.com </h1>");
 		out.println(" <h2> This is Servlet B web page </h2>");
-		out.println(" <h3> Here is your session ID : " + (session!=null ? session.getId() : null )+ "</h3>");
+		out.println(" <h3> Here is your session ID : " + (session != null ? session.getId() : null) + "</h3>");
+
+		// Retrieve the products stored in the session
+		if (session != null) {
+			List<Product> products = (List<Product>) session.getAttribute("products-list");
+
+			out.println(" <h2> Found the following products in the session object </h2>");
+			if( products != null ) products.forEach(prod -> out.println(prod.getName()));
+
+		} else {
+			out.println(" <h2> No products Found in the session object </h2>");
+		}
 
 		out.close();
 
