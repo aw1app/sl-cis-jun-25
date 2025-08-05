@@ -10,6 +10,10 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+//Demo session tracking using Hodeen form feilds technique technique
+//This servlet passes the sessionId to ServletB by sending an form that gets auto submitted to it using JavaScript
+//In real world app, ServletA should also ensure that the sessionId is NOT created again for the same user/session.
+
 @WebServlet("/ServletA")
 public class ServletA extends HttpServlet {
 	private static final long serialVersionUID = 1L;
