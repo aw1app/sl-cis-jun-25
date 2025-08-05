@@ -31,7 +31,7 @@ public class A3 extends HttpServlet {
 
 		response.sendRedirect("B3");
 		
-		// below out will never reach the end user's browser because of above redirection
+		// below output will never reach the end user's browser because of above redirection
 		out.println("<h2> 2.  Hi again from servlet A3 </h2>");
 		
 		out.close();
