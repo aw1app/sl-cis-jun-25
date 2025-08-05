@@ -11,6 +11,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 // Demo session tracking using URL rewriting technique
+// This servlet passes the sessionId to Servlet by rewriting the URL
+// In real world app, ServletA should also ensure that the sessionId is NOT created again for the same user/session.
 
 @WebServlet("/ServletA")
 public class ServletA extends HttpServlet {
@@ -20,6 +22,7 @@ public class ServletA extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		int sessionId = random.nextInt();
 		
 		response.setContentType("text/html");
