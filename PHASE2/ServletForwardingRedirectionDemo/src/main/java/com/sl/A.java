@@ -10,6 +10,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+
+//Demo servlet forwarding
+
 @WebServlet("/A")
 public class A extends HttpServlet {
 	private static final long serialVersionUID = 1L;
