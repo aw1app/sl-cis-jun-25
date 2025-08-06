@@ -14,3 +14,5 @@
 	out.print("This is a JSP Page. Today's waether is " + weatherToday);
 	%>
 </body>
+
+Task-1: Create a JSP page that outputs a bullet list of four fruits
