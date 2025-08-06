@@ -21,9 +21,11 @@
 	out.print("<br>");
 	out.print("add(4, 5) = " + add(4, 15) );
 	%>
+	
+	
 <br><br>
 <li> <strong> Task-2:  </strong> 
-Create a JSP that demonstrates creating  a applyDiscount method annd using it on a price 100.</li>	
+Create a JSP that demonstrates creating  a applyDiscount method and using it on a price 100.</li>	
 
 </body>
 </html>
