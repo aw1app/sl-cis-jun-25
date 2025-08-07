@@ -8,6 +8,7 @@
 
 <body>
 
+<!-- Demo of setting variable and displaying  -->
 
 	<c:set var="x" value="100" />
 
