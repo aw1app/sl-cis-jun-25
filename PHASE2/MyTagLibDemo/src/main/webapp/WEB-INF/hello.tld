@@ -16,5 +16,9 @@
             <name>name</name>
             <required>true</required>
         </attribute>
+         <attribute>
+            <name>age</name>
+            <required>false</required>
+        </attribute>
     </tag>
 </taglib>

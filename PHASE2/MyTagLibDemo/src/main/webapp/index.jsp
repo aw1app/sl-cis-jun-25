@@ -9,6 +9,8 @@
 <body>
 
 <hello:sayHello name="Piyush" />
+<br>
+<hello:sayHello name="Prakash" age="30"/>
 
 </body>
 </html>
