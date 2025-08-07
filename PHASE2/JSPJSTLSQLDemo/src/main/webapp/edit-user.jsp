@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" %>
 
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <%@ taglib prefix="sql" uri="jakarta.tags.sql"%>
@@ -31,9 +31,9 @@
 			password="rootroot" />
 
 
-		<sql:query dataSource="${cis_estore_db}" var="resultSet">
+	<sql:query dataSource="${cis_estore_db}" var="resultSet">
 	SELECT * FROM users WHERE UserID=${param.UserID}
-	</sql:query>
+	</sql:query> 
 
 		<table border=1>
 			<c:forEach var="row" items="${resultSet.rows}">
