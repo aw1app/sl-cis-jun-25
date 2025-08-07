@@ -5,7 +5,9 @@
 <
 <body>
 
-<a href="select-users.jsp"> ALL USERS </a> | <a href="add-user-form.html"> CREATE USER </a> 
+<a href="select-users.jsp"> ALL USERS </a> 
+| <a href="add-user-form.html"> CREATE USER </a> 
+| <a href="edit-user.jsp"> EDIT USER </a> 
 
 </body>
 </html>

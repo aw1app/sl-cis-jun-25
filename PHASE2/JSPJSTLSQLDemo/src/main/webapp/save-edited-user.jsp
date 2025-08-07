@@ -16,10 +16,10 @@
 
 
 	<sql:update dataSource="${cis_estore_db}" var="count">
-	INSERT INTO users(Username,Email) VALUES('${param.Name}','${param.Email}')
+	UPDATE users SET UserName='${param.Name}',Email='${param.Email}' WHERE UserID=${param.UserID}
 	</sql:update>
 	
-	<c:out value="${count}" />(s) rows inserted successfully!.
+	<c:out value="${count}" /> User updated successfully!.
 
 	
 </body>
