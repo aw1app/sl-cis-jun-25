@@ -26,7 +26,7 @@
 	</c:if>
 	
 	<c:if test="${!sessionScope.authenticated}">
-		<c:redirect url="login-form.html"/>
+		<c:redirect url="login-form.jsp"/>
 	</c:if>
 	
 

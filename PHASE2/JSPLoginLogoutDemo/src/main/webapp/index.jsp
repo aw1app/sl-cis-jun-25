@@ -15,7 +15,7 @@
 	
 
 	<c:if test="${!sessionScope.authenticated}">
-		<a href="login-form.html"> LOGIN </a> |
+		<a href="login-form.jsp"> LOGIN </a> |
 	</c:if>
 
 	<c:if test="${sessionScope.authenticated}">
