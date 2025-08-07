@@ -25,4 +25,5 @@
 Task-1: Given name, salary and address in the form NAME,SALARY, DOORNO, STREET, CITY, PINCODE.
 and you have 4 people's data array.
 Then display only those names whose salary is > 50000
+HINT: Use c:forEach for looping 4 people's array, Then c:forTokens for parsing data of each person.
 -->
