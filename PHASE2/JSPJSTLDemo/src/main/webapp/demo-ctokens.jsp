@@ -20,3 +20,9 @@
 
 </body>
 </html>
+
+<!-- 
+Task-1: Given name, salary and address in the form NAME,SALARY, DOORNO, STREET, CITY, PINCODE.
+and you have 4 people's data.
+Then display only those names whose salary is > 50000
+-->
