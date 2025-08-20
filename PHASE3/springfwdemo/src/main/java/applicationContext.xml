@@ -1,0 +1,21 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="product1" class="springfwdemo.Product">
+
+		<constructor-arg name="name" value="Samsung Galaxy Phone" />
+		<constructor-arg name="desc" value="Some Desc" />
+		<constructor-arg name="price" value="999.0f" />
+
+	</bean>
+
+
+
+</beans>
+	 
+	 
+	 
+	 
