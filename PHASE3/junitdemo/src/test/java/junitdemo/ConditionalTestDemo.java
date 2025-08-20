@@ -2,6 +2,7 @@ package junitdemo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledForJreRange;
 import org.junit.jupiter.api.condition.EnabledOnOs;
@@ -43,6 +44,20 @@ class ConditionalTestDemo {
 	public void testAddOnJRERange() {
 
 		System.out.println("INSIDE testAddOnJRERange");
+
+		Calculator cal = new Calculator();
+
+		int x = 2;
+		int y = 5;
+
+		assertEquals(7, cal.add(x, y));
+	}
+	
+	@Test
+	@Disabled
+	public void testAdd100() {
+
+		System.out.println("INSIDE testAdd100");
 
 		Calculator cal = new Calculator();
 
