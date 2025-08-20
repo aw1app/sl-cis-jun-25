@@ -37,8 +37,13 @@ class AssertionsDemo {
 		assertArrayEquals(a1, a2); // pass
 		
 		// assertThrows(ArithmeticException.class,  () -> { new Calculator().divide(10, 1); } ); // fail		
-		assertThrows(ArithmeticException.class,  () -> { new Calculator().divide(10, 0); } ); // pass
+		assertThrows(ArithmeticException.class,  () ->  divideByZero() ); // pass
 		
+	}
+	
+	// this utility method we know will throw ArithmeticException exception.
+	void divideByZero() {
+		new Calculator().divide(10, 0);
 	}
 
 }
