@@ -6,6 +6,8 @@ public class Product implements IProduct {
 	String desc;
 	float price;
 	
+	Brand brand;
+	
 	public Product() {
 		
 	}
@@ -15,6 +17,14 @@ public class Product implements IProduct {
 		this.name = name;
 		this.desc = desc;
 		this.price = price;
+	}
+	
+	public Product(String name, String desc, float price, Brand brand) {
+		super();
+		this.name = name;
+		this.desc = desc;
+		this.price = price;
+		this.brand = brand;
 	}
 
 	public String getName() {
@@ -36,6 +46,14 @@ public class Product implements IProduct {
 
 	public void setPrice(float price) {
 		this.price = price;
+	}
+	
+	public Brand getBrand() {
+		return brand;
+	}
+	
+	public void setBrand(Brand brand) {
+		this.brand = brand;
 	}
 
 }

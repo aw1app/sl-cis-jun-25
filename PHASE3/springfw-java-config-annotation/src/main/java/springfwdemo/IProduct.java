@@ -12,4 +12,8 @@ public interface IProduct {
 
 	public String getDesc();
 
+	public Brand getBrand();
+	
+	
+
 }
