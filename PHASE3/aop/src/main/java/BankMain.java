@@ -26,6 +26,8 @@ public class BankMain {
 		X x1 = (X) context.getBean(X.class);
 
 		x1.methodX1();
+		
+		bankAcct.withdraw(6000.0d);
 	}
 
 }
