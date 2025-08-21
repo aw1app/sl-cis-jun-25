@@ -8,8 +8,7 @@ public class ProductMain {
 
 	public static void main(String[] args) {
 
-		// ApplicationContext context = new
-		// ClassPathXmlApplicationContext("applicationContext.xml");
+		
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyProductConfig.class);
 
 		IProduct p1 = (IProduct) context.getBean("product1");
