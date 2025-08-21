@@ -1,14 +1,15 @@
 package springfwdemo;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import springfwdemo.config.MyProductConfig;
 
 public class ProductMain {
 
 	public static void main(String[] args) {
-//		IProduct p1 = new Product("TV", " 55 LED television", 55000.0f);
 		
-		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		//ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyProductConfig.class);
 		
 		IProduct p1 = (IProduct) context.getBean("product1");
 
