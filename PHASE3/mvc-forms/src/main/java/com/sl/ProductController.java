@@ -1,6 +1,7 @@
 package com.sl;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,5 +34,17 @@ public class ProductController{
 		
 		return "Successfully Created a new product! [ " + product.name +" , "+ product.price  +" ]";
 	}
+	
+	
+	@PostMapping("/product-new-v3")
+	public String createProductV3(Product product, ModelMap model) 
+	{
+		
+		// some business logic here.
+		model.addAttribute("product", product);
+		
+		return "new-product-success"; // render new-product-success.jsp
+	}
+	
 
 }
