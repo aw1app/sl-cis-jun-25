@@ -46,5 +46,6 @@ public class ProductController{
 		return "new-product-success"; // render new-product-success.jsp
 	}
 	
+	
 
 }
