@@ -2,6 +2,7 @@ package com.sl;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -21,6 +22,16 @@ public class ProductController{
 		
 		return "Successfully Created a new product! [ " + name +" , "+ price  +" ]";
 	}
-
+	
+	
+	@PostMapping("/product-new-v2")
+	@ResponseBody
+	public String createProductV2(Product product) 
+	{
+		
+		// some business logic here.
+		
+		return "Successfully Created a new product! [ " + product.name +" , "+ product.price  +" ]";
+	}
 
 }

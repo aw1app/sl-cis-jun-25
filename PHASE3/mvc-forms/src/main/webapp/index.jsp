@@ -9,6 +9,7 @@
 <body>
 	<h1>Welcome to Web MVC project</h1>
 	
-	<a href="new-product.jsp">   NEW PRODUCT </a>
+	<a href="new-product.jsp">   NEW PRODUCT </a>  | 
+	<a href="new-product_v2.jsp">   NEW PRODUCT V2 </a>
 </body>
 </html>
