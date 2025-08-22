@@ -19,7 +19,7 @@ public class WelcomeController {
 	@ResponseBody
 	public String welcome1() {
 		
-		return "a";		
+		return "a";	// send the literal "a"	
 	}
 
 }
