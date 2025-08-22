@@ -8,5 +8,7 @@
 </head>
 <body>
 	<h1>Welcome to Web MVC project</h1>
+	
+	<a href="new-product.jsp">   NEW PRODUCT </a>
 </body>
 </html>

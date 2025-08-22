@@ -1,31 +1,27 @@
 package webdemo;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("/welcome")
-public class WelcomeController {
+@RequestMapping("/product")
+public class ProductController{
 	
-	
-	@GetMapping("/1")
-	public String welcome() {
-		
-		return "ab";	// render ab.jsp in the browser	
-	}
-	
-	
-	@GetMapping("/2")
+	@PostMapping("/new")
 	@ResponseBody
-	public String welcome1() {
+	public String createProduct(
+			@RequestParam("name") String name,
+			@RequestParam("price") float price,
+			@RequestParam("desc") String desc) 
+	{
 		
-		return "<h2>ABC</h2>";	// send the literal "<h2>ABC</h2>" to the browser
+		// some business logic here.
+		
+		return "Successfully Created a new product! [ " + name +" , "+ price  +" ]";
 	}
-	
-	
+
 
 }
