@@ -18,7 +18,7 @@
 
 	<c:forEach var="user" items="${users}">	
 	
-		${user.UserID }, ${user.name }, ${user.email } <br/>
+		${user.userID }, ${user.name }, ${user.email } <br/>
 
 
 		</c:forEach>

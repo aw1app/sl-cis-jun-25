@@ -1,0 +1,9 @@
+
+
+Create PRODUCTS table in MySQL and populate with sample data.
+
+Use Spring JDBC to do CRUD ops on the PRODUCTS table.
+
+1. Create the Product entity class
+2. Create the DAO class
+3. Create the Controller ProductController

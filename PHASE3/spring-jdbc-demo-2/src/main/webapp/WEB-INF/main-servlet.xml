@@ -57,14 +57,11 @@ http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 		<property name="dataSource" ref="ds"></property>
 	</bean>
 	
-	<bean id="userDao" class="com.sl.dao.UserDAO">
+	<bean id="userDao" class="com.sl.UserDAO">
 		<property name="userJDBCTemplate" ref="jdbctemplate" />
 	</bean>
 	
 	<context:component-scan base-package="com.sl" />
-	<context:component-scan base-package="com.sl.entity" />
-	<context:component-scan base-package="com.sl.dao" />
-	<context:component-scan base-package="com.sl.controller" />
 	
 
 </beans>

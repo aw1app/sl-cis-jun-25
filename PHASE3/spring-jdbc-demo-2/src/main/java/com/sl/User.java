@@ -1,6 +1,8 @@
+package com.sl;
+
 public class User {
 	
-	int UserID;
+	int userID;
 	String name;
 	String email;
 	
@@ -12,17 +14,17 @@ public class User {
 		
 	public User(int userID, String name, String email) {
 		super();
-		UserID = userID;
+		this.userID = userID;
 		this.name = name;
 		this.email = email;
 	}
 
 
 	public int getUserID() {
-		return UserID;
+		return userID;
 	}
 	public void setUserID(int userID) {
-		UserID = userID;
+		this.userID = userID;
 	}
 	public String getName() {
 		return name;

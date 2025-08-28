@@ -1,3 +1,5 @@
+package com.sl;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -14,16 +16,24 @@ public class UserDAO {
 	JdbcTemplate userJDBCTemplate;
 	
 	
-	public void setTemplate(JdbcTemplate jdbctemplate) {
+	public void setUserJDBCTemplate(JdbcTemplate jdbctemplate) {
 		this.userJDBCTemplate = jdbctemplate;
 	}
 	
 	
 	//CRUD Ops	
-	// 1. List all users from Users table 
+	// 1. Read (List) all users from Users table 
 	
 	public List<User> getAllUsers(){
 		return this.userJDBCTemplate.query("SELECT * FROM USERS", new UserRowMapper());		
+	}
+	
+	// 2. Create ops 
+	public int insertUser(User u){
+		return this.userJDBCTemplate.update(
+				"INSERT INTO USERS(Username, Email) VALUES(?,?) ",
+				u.getName(), u.getEmail()
+				);		
 	}
 
 }

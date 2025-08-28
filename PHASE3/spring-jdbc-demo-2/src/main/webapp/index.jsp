@@ -10,7 +10,8 @@
 
 <h1> Welcome to Amazon.com </h1>
 
-<a href="list-users" > List users </a>
+<a href="list-users" > List users </a> |     
+<a href="new-user-form.jsp" > Create User</a>
 
 </body>
 </html>
