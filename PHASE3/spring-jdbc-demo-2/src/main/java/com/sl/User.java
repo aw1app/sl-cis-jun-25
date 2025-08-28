@@ -9,8 +9,7 @@ public class User {
 	
 	public User() {
 		
-	}
-	
+	}	
 		
 	public User(int userID, String name, String email) {
 		super();

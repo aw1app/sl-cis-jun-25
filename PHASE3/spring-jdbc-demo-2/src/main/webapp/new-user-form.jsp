@@ -13,4 +13,6 @@ EMAIL : <input name="email"><br>
 
 <input type=submit value="submit"><br>
 
+<br><br> <a href="${pageContext.request.contextPath}/index.jsp" > Go back to Home </a>
+
 </form>

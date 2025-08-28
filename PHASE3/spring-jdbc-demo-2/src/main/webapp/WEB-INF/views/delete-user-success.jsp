@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
-<h2>Successfully create ${count} user(s) </h2>
+<h2>Successfully deleted ${count} user(s) </h2>
 
 <br><br> <a href="${pageContext.request.contextPath}/index.jsp" > Go back to Home </a>
+

@@ -7,6 +7,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 
 
 
@@ -15,11 +18,18 @@ public class UserDAO {
 	@Autowired
 	JdbcTemplate userJDBCTemplate;
 	
-	
 	public void setUserJDBCTemplate(JdbcTemplate jdbctemplate) {
 		this.userJDBCTemplate = jdbctemplate;
 	}
 	
+	@Autowired
+	NamedParameterJdbcTemplate  namedParameterUserJdbcTemplate;
+	
+
+	public void setNamedParameterUserJdbcTemplate(NamedParameterJdbcTemplate n) {
+		  this.namedParameterUserJdbcTemplate = n;
+		}
+
 	
 	//CRUD Ops	
 	// 1. Read (List) all users from Users table 
@@ -33,6 +43,16 @@ public class UserDAO {
 		return this.userJDBCTemplate.update(
 				"INSERT INTO USERS(Username, Email) VALUES(?,?) ",
 				u.getName(), u.getEmail()
+				);		
+	}
+	
+	// 3. delete a user given the userid
+	public int deleteUser(int id){
+		SqlParameterSource namedParameters = new MapSqlParameterSource().addValue("id",id);
+		
+		return this.namedParameterUserJdbcTemplate.update(
+				"DELETE FROM USERS WHERE UserID=:id ",
+				namedParameters
 				);		
 	}
 

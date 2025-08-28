@@ -18,11 +18,13 @@
 
 	<c:forEach var="user" items="${users}">	
 	
-		${user.userID }, ${user.name }, ${user.email } <br/>
+		${user.userID }, ${user.name }, ${user.email } , <a href="delete-user/${user.userID}"> DELETE </a> <br/>
 
 
 		</c:forEach>
 
+
+<br><br> <a href="${pageContext.request.contextPath}/index.jsp" > Go back to Home </a>
 
 </body>
 </html>
