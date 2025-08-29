@@ -13,7 +13,7 @@
 <h2>EDIT PRODUCT</h2>
 
 <form action="/edit-product" method="POST">
-	ID : <input type="hidden" name="id" value="${product.id }" readonly> <br>
+	<input type="hidden" name="id" value="${product.id }" readonly> <br>
 	NAME : <input name="name" value="${product.name }"> <br> <br>
 	PRICE : <input name="price" value="${product.price }"><br>
 	<br> <input type="submit" value="Save"><br>

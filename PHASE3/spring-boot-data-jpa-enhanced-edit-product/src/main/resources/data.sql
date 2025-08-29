@@ -1,0 +1,10 @@
+INSERT INTO products (name, price) VALUES ('Laptop', 75000.00);
+INSERT INTO products (name, price) VALUES ('Smartphone', 25000.00);
+INSERT INTO products (name, price) VALUES ('Headphones', 3500.00);
+INSERT INTO products (name, price) VALUES ('Keyboard', 1200.00);
+INSERT INTO products (name, price) VALUES ('Mouse', 800.00);
+INSERT INTO products (name, price) VALUES ('Smartwatch', 5000.00);
+INSERT INTO products (name, price) VALUES ('Tablet', 18000.00);
+INSERT INTO products (name, price) VALUES ('Monitor', 15000.00);
+INSERT INTO products (name, price) VALUES ('Printer', 7000.00);
+INSERT INTO products (name, price) VALUES ('Speakers', 4500.00);
