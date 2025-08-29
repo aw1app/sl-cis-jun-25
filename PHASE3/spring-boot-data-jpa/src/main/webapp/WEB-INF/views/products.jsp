@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
-<%@ taglib prefix="sql" uri="jakarta.tags.sql"%>
 
 <!DOCTYPE html>
 <html>
@@ -17,6 +16,7 @@
 			<th>NAME
 			<th>PRICE
 			<th>DETAILS
+			<th>EDIT
 			<th>DELETE
 		</tr>
 
@@ -26,11 +26,20 @@
 				<td>${product.name}
 				<td>${product.price}
 				<td><a href="<c:url value='/product/${product.id}'/>"> DETAILS </a>
+				<td><a style="color:green" href="<c:url value='/edit-product/${product.id}'/>"> EDIT </a>
 				<td><a style="color:red" href="<c:url value='/delete-product/${product.id}'/>"> DELETE </a>
 			</tr>
 		</c:forEach>
 
 	</table>
+
+	<br>
+	<br>
+	<h2>ADD NEW PRODUCT</h2>
+	<form action="new-product" method="POST">
+		NAME : <input name="name"> PRICE <input name="price">
+		<input type="submit"><br>
+	</form>
 
 
 

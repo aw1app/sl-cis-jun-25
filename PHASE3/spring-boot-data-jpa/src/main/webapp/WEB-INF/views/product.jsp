@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
-<%@ taglib prefix="sql" uri="jakarta.tags.sql"%>
 
 <!DOCTYPE html>
 <html>
