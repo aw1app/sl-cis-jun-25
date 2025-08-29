@@ -1,0 +1,8 @@
+Task-1:
+
+Implement a mapping for deleting a product.
+
+
+Task-2:
+
+Implement editing of a existing product in the same page (product  list page).
