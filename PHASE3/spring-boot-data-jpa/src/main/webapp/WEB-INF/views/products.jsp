@@ -16,6 +16,7 @@
 			<th>ID
 			<th>NAME
 			<th>PRICE
+			<th>DETAILS
 		</tr>
 
 		<c:forEach var="product" items="${products}">
@@ -23,6 +24,7 @@
 				<td>${product.id}
 				<td>${product.name}
 				<td>${product.price}
+				<td><a href="<c:url value='/product/${product.id}'/>"> DETAILS </a>
 			</tr>
 		</c:forEach>
 
