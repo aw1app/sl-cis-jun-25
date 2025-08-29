@@ -31,7 +31,7 @@ public class ProductController {
 	
 	/* Details of a single product */
 	@GetMapping("/product/{id}")
-	public String getAllProducts(@PathVariable("id") int id, ModelMap model) {
+	public String getProduct(@PathVariable("id") int id, ModelMap model) {
 		
 		Optional<Product> result = productRepositry.findById(id);
 		
@@ -42,6 +42,21 @@ public class ProductController {
 		
 		model.addAttribute("product", product);
 		return "product"; // WEB_INF/views/product.jsp
+	}
+	
+	
+	/* Delete a single product */
+	@GetMapping("/delete-product/{id}")
+	public String deleteProduct(@PathVariable("id") int id, ModelMap model) {
+		
+		Optional<Product> result = productRepositry.findById(id);
+		
+		Product product=null;
+		if(result.isPresent()) {
+			productRepositry.deleteById(id);		
+		}
+		
+		return "redirect:/list-products"; // redirect to WEB_INF/views/list-products.jsp
 	}
 
 }
