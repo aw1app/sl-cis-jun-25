@@ -8,4 +8,6 @@ import com.sl.entity.Product;
 @Repository
 public interface ProductRepositry extends JpaRepository<Product, Integer>{
 
+	
+	
 }
