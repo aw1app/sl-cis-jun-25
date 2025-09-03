@@ -66,7 +66,7 @@ public class ProductController {
 		return "products"; // WEB_INF/views/products.jsp
 	}
 	
-	/* find all products whose name is 5 chars in length */
+	/* find all products whose name is n chars in length */
 	@GetMapping("/list-products/name-length/{n}")
 	public String findProductsWithNameLengthFive(@PathVariable("n") int n, ModelMap model) {
 		List<Product> products = productRepositry.findProductsWithNameLengthFive(n);
@@ -76,6 +76,15 @@ public class ProductController {
 		return "products"; // WEB_INF/views/products.jsp
 	}
 	
+	/* find all products whose name is n chars in length. This time using native SQL */
+	@GetMapping("/list-products/name-length-using-sql/{n}")
+	public String findProductsWithNameLengthEquals(@PathVariable("n") int n, ModelMap model) {
+		List<Product> products = productRepositry.abc(n);
+		
+		model.addAttribute("products", products);
+
+		return "products"; // WEB_INF/views/products.jsp
+	}
 	
 	
 

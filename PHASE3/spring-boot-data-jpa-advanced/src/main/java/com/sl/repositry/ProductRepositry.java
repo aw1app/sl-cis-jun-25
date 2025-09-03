@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.sl.entity.Product;
@@ -42,5 +43,8 @@ public interface ProductRepositry extends JpaRepository<Product, Integer> {
 	// NOTE : you cannot write one using what options we have in above doc file query-methods.html. We can only by using JPQL
 	@Query(value = "SELECT p FROM Product p WHERE LENGTH(p.name) = :n")
 	List<Product> findProductsWithNameLengthFive(int n);
+	
+	@Query(value = "SELECT * FROM products  WHERE length(name)=:n ", nativeQuery = true )
+	List<Product> abc(@Param("n") int n);
 
 }
