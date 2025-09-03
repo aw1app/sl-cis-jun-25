@@ -1,11 +1,13 @@
 package com.sl.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,6 +31,18 @@ public class ProductController {
 	
 	//Task-1: Create a mapping that will return details of a single product given the product id.
 	// Test the implementation using postman app
-	
+	@GetMapping("/details/{id}")
+	public ResponseEntity<Product> getProduct(@PathVariable("id") int id){
+		
+		Optional<Product> result = productRepositry.findById(id);
+
+		Product product = null;
+		if (result.isPresent()) {
+			product = result.get();
+			return new ResponseEntity(product, HttpStatusCode.valueOf(200));
+		}
+
+		return new ResponseEntity(null, HttpStatusCode.valueOf(404));
+	}
 
 }
