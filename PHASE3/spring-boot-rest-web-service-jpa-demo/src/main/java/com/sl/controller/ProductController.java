@@ -26,5 +26,9 @@ public class ProductController {
 		return new ResponseEntity(products, HttpStatusCode.valueOf(200));
 	}
 	
+	
+	//Task-1: Create a mapping that will return details of a single product given the product id.
+	// Test the implementation using postman app
+	
 
 }
