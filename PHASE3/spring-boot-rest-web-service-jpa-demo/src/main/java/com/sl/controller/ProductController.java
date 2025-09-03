@@ -74,12 +74,19 @@ public class ProductController {
 		Optional<Product> result = productRepositry.findById(id);
 
 		Product product = null;
+		String message = null;
+		HttpStatusCode httpStatus;
+
 		if (result.isPresent()) {
 			productRepositry.deleteById(id);
-			return new ResponseEntity("Delete Successful", HttpStatusCode.valueOf(200)); // 200 - request was successful
+			message = "Delete Successful";
+			httpStatus = HttpStatusCode.valueOf(200);// 200 - request was successful
+		} else {
+			message = "Product with given id " + id + " was not found ";
+			httpStatus = HttpStatusCode.valueOf(404);
 		}
 
-		return new ResponseEntity("Product with given id " + id + " was not found ", HttpStatusCode.valueOf(404));
+		return new ResponseEntity(message, httpStatus);
 	}
 
 }
