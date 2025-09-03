@@ -55,6 +55,26 @@ public class ProductController {
 		return "products"; // WEB_INF/views/products.jsp
 	}
 	
+	//Task
+	/* Find all products containing particular chars in name and also they are less than some price  */
+	@GetMapping("/list-products/name/{name}/price-less-than/{price}")
+	public String findAllByNameContainingAndPriceLessThan(@PathVariable("name") String name ,@PathVariable("price") float price ,ModelMap model) {
+		List<Product> products = productRepositry.findAllByNameContainingAndPriceLessThan(name,price);
+
+		model.addAttribute("products", products);
+
+		return "products"; // WEB_INF/views/products.jsp
+	}
+	
+	/* find all products whose name is 5 chars in length */
+	@GetMapping("/list-products/name-length/{n}")
+	public String findProductsWithNameLengthFive(@PathVariable("n") int n, ModelMap model) {
+		List<Product> products = productRepositry.findProductsWithNameLengthFive(n);
+		
+		model.addAttribute("products", products);
+
+		return "products"; // WEB_INF/views/products.jsp
+	}
 	
 	
 	
