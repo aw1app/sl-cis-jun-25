@@ -55,5 +55,7 @@ public class ProductController {
 		
 		return new ResponseEntity(product, HttpStatusCode.valueOf(201));	// 201 - created successfully	
 	}
+	
+	// Task-2 Implement delete a product given it's id
 
 }
