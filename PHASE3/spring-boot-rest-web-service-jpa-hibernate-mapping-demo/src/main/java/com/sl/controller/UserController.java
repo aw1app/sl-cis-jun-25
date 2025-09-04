@@ -1,6 +1,7 @@
 package com.sl.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,16 +24,19 @@ public class UserController {
 
 		User user = userRepo.findById(userId).orElseThrow();
 
-		// user object has orders info as well.
-		// so let's use UserDTO object so that only user info
-		// and not orders inside it are send to the caller
-
-		if (details.equals("basic"))
+		switch (details.toLowerCase()) {
+		case "basic":
 			return new UserDTO(user);
-		else if (details.equals("full"))
+
+		case "full":
 			return user;
-		
-		return null;
+
+		case "orders":
+			return user.getOrders(); // returns just the orders list
+
+		default:
+			return ResponseEntity.badRequest().body("Invalid details type. Use 'basic', 'full', or 'orders'.");
+		}
 	}
 
 }
