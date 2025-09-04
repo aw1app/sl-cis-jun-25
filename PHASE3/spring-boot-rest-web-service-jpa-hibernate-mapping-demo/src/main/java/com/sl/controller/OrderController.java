@@ -58,5 +58,14 @@ public class OrderController {
 	}
 	
 	
+	//Task: Implement Edit order, update the products list in that order
+	@PostMapping("/order-update/{orderId}")
+	public Order updateOrder(@PathVariable int orderId, @RequestBody List<Integer> productIds) {
+	
+		// your code here
+		
+		return null;
+	}
+	
 
 }
