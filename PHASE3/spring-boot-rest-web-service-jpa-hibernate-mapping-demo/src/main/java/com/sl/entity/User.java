@@ -2,6 +2,8 @@ package com.sl.entity;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -29,8 +31,52 @@ public class User {
     
     
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonManagedReference  // forward reference
     private List<Order> orders;
+
+
+	public int getUserId() {
+		return userId;
+	}
+
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+
+	public String getUsername() {
+		return username;
+	}
+
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	public List<Order> getOrders() {
+		return orders;
+	}
+
+
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
+	}
     
+    
+    
+    // getters and setters
     
 
 }

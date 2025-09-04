@@ -2,6 +2,8 @@ package com.sl.entity;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,35 +13,32 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="products")
+@Table(name = "products")
 public class Product {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
-    
-    
-    @Column(name="name")    
+
+	@Column(name = "name")
 	String name;
-    
-   
-    @Column(name="price")
+
+	@Column(name = "price")
 	float price;
-    
-    
-    @ManyToMany(mappedBy = "products")
-    private List<Order> orders;
-	
+
+	@ManyToMany(mappedBy = "products")
+	@JsonBackReference // prevent recursion
+	private List<Order> orders;
+
 	public Product() {
-		
-	}	
+
+	}
 
 	public Product(String name, float price) {
 		super();
 		this.name = name;
 		this.price = price;
 	}
-
 
 	public int getId() {
 		return id;
@@ -64,7 +63,13 @@ public class Product {
 	public void setPrice(float price) {
 		this.price = price;
 	}
-	
-	
+
+	public List<Order> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
+	}
 
 }
