@@ -26,3 +26,23 @@ CREATE TABLE order_products (
     CONSTRAINT fk_order FOREIGN KEY (order_id) REFERENCES orders(OrderID),
     CONSTRAINT fk_product FOREIGN KEY (product_id) REFERENCES products(id)
 );
+
+
+
+//Task-1: Implement Edit order, update the products list in that order
+	@PostMapping("/order-update/{orderId}")
+	public Order updateOrder(@PathVariable int orderId, @RequestBody List<Integer> productIds) {
+	
+		// your code here
+		
+		return null;
+	}
+	
+//Task-2: Implement User controller. In that have a mapping to get details of a User
+	@GetMapping("/user-details/{userId}")
+	public Order userDetails(@PathVariable int userId) {
+	
+		// your code here
+		
+		return null;
+}

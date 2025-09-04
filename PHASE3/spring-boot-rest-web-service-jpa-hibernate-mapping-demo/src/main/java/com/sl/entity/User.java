@@ -2,6 +2,7 @@ package com.sl.entity;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CascadeType;
@@ -32,6 +33,7 @@ public class User {
     
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     @JsonManagedReference  // forward reference
+    //@JsonIgnore // User object will not serialize orders info. alternative to use this solution is create DTO objects
     private List<Order> orders;
 
 

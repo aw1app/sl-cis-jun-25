@@ -40,8 +40,7 @@ public class OrderController {
 		
 		order.setUser(user);
 		order.setProducts(products);
-		order.setAmount(amount);		
-		 
+		order.setAmount(amount);				 
 		
 		Order saveOrder = orderRepositry.save(order);
 		
@@ -58,7 +57,7 @@ public class OrderController {
 	}
 	
 	
-	//Task: Implement Edit order, update the products list in that order
+	//Task-1: Implement Edit order, update the products list in that order
 	@PostMapping("/order-update/{orderId}")
 	public Order updateOrder(@PathVariable int orderId, @RequestBody List<Integer> productIds) {
 	
