@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import com.sl.entity.User;
+import com.sl.entity.dto.OrderResponse;
 import com.sl.repositry.UserRepository;
 
 @RestController
@@ -22,6 +24,9 @@ public class UserController {
 
 	@Autowired
 	UserRepository userRepo;
+	
+	@Autowired
+	RestTemplate restTemplate;
 
 	@GetMapping
 	public List<User> getAllUsers() {
@@ -53,6 +58,16 @@ public class UserController {
 			userRepo.delete(user);
 			return ResponseEntity.noContent().<Void>build();
 		}).orElse(ResponseEntity.notFound().build());
+	}
+	
+	
+	// Fetch all orders for a particulars
+	@GetMapping("/orders/{userId}")
+	public List<OrderResponse> getAllOrders() {
+		
+		
+		
+		return null;
 	}
 
 }

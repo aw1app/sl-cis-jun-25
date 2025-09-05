@@ -49,6 +49,32 @@ public class OrderController {
 
 		return orderResonses;
 	}
+	
+	@GetMapping("/user/{uid}")
+	public List<OrderResponse> getAllOrdersOfUser(@PathVariable("uid") String uid) {
+
+		List<Order> orders = orderRepositry.findAllOrdersByUserId(uid);
+		System.out.println("<DEBUG> orders : " + orders);
+		
+		List<OrderResponse> orderResonses = new ArrayList<OrderResponse>();
+
+		for (Order order : orders) {
+			List<Integer> pids = order.getProductIds();
+
+			List<Product> products= new ArrayList<Product>();
+			
+			for (int pid : pids) {
+				Product prod = restTemplate.getForObject("http://spring-boot-product-microservice/products/details/" + pid,Product.class);
+				products.add(prod);
+			}		
+			
+			orderResonses.add(new OrderResponse(order.getOrderId(), order.getAmount(), products));
+		};		
+		
+
+		return orderResonses;
+	}
+	
 
 	@GetMapping("/details/{orderId}")
 	public OrderResponse orderDetails(@PathVariable int orderId) {
