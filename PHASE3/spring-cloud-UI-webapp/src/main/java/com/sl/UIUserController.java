@@ -23,7 +23,13 @@ public class UIUserController {
 		
 		model.addAttribute("userResponses", userResponses);
 		
-		return "users" ; // 
+		return "users" ; //user has user details but with orders details 
 	}
+	
+	
+	//Task: Single user details.
+	// user with user details all with orders details 
+	@GetMapping("/user/{userId}")
+	
 
 }

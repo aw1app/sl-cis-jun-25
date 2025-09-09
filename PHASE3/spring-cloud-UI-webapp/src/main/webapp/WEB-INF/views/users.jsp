@@ -23,6 +23,7 @@ All users
 			<td>${user.id}
 			<td>${user.username}
 			<td>${user.email}
+			<td><a href="<c:url value='/user/${user.id}'/>"> DETAILS </a>
 		</tr>
 	</c:forEach>
 </table>
