@@ -29,7 +29,11 @@ public class UIUserController {
 	
 	//Task: Single user details.
 	// user with user details all with orders details 
-	@GetMapping("/user/{userId}")
-	
+	@GetMapping("/user/{userId}")	
+	public String getUserDetails(Model model) {
+		
+		
+		return "user";
+	}
 
 }
