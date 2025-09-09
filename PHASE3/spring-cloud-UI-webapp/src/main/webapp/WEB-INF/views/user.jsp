@@ -6,27 +6,29 @@
 
 <html>
 
-All users
 
-<br>LIST OF PRODUCTS
+
+<br>Details of User
 <br>
 <table border=1>
 	<tr style="background-color: lightgrey">
 		<th>ID
 		<th>NAME
 		<th>PRICE
-		<th>DETAILS
+		<th>ORDERS
 	</tr>
 
-	<c:forEach var="user" items="${userResponses}">
+	
 		<tr>
-			<td>${user.id}
-			<td>${user.username}
-			<td>${user.email}
-			<td>${user.orderResponses}
-			<td><a href="<c:url value='/users/user/${user.id}'/>"> DETAILS </a>
+			<td>${userResponse.id}
+			<td>${userResponse.username}
+			<td>${userResponse.email}
+			<td>
+			<c:forEach var="order" items="${orderResponses}"> 
+			Order Id: ${order.orderId} (INR ${order.amount} , ${order.products.size()} products) <br>
+			</c:forEach>
+			</td>
 		</tr>
-	</c:forEach>
 </table>
 
 

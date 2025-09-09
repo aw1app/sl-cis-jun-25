@@ -63,11 +63,13 @@ public class UserController {
 	
 	// Fetch all orders for a particulars
 	@GetMapping("/orders/{userId}")
-	public List<OrderResponse> getAllOrders() {
+	public List<OrderResponse> getAllOrders(@PathVariable("userId")  String userId) {
 		
+		OrderResponse[] orderResponses =restTemplate.getForObject(
+				"http://spring-boot-order-microservice/orders/user/"+userId, OrderResponse[].class);
+			
 		
-		
-		return null;
+		return List.of(orderResponses);
 	}
 
 }
