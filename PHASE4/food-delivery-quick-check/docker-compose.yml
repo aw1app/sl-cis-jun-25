@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  foods-service:
+    build: ./foods-service
+    container_name: foods-service-check
+    ports:
+      - "8081:8081"
+    networks:
+      - food-app-net
+
+  orders-service:
+    build: ./orders-service
+    container_name: orders-service-check
+    ports:
+      - "8082:8082"
+    networks:
+      - food-app-net
+
+  users-service:
+    build: ./users-service
+    container_name: users-service-check
+    ports:
+      - "8083:8083"
+    networks:
+      - food-app-net
+
+  frontend:
+    build: ./frontend
+    container_name: frontend-check
+    ports:
+      - "80:80"
+    depends_on:
+      - foods-service
+      - orders-service
+      - users-service
+    networks:
+      - food-app-net
+
+networks:
+  food-app-net:
+    driver: bridge

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>System Status Check</title>
+    <style>
+        body { font-family: sans-serif; padding: 2em; }
+        .service { border: 1px solid #ccc; padding: 1em; margin-bottom: 1em; border-radius: 5px; }
+        button { font-size: 1em; padding: 0.5em 1em; }
+        #result { font-weight: bold; color: green; }
+    </style>
+</head>
+<body>
+    <h1>Food Delivery App - System Status Check</h1>
+
+    <div class="service">
+        <h2>Foods Service</h2>
+        <button onclick="checkService('/api/foods/ping', 'foods-result')">Check Status</button>
+        <p>Status: <span id="foods-result"></span></p>
+    </div>
+
+    <div class="service">
+        <h2>Orders Service</h2>
+        <button onclick="checkService('/api/orders/ping', 'orders-result')">Check Status</button>
+        <p>Status: <span id="orders-result"></span></p>
+    </div>
+
+    <div class="service">
+        <h2>Users Service</h2>
+        <button onclick="checkService('/api/users/ping', 'users-result')">Check Status</button>
+        <p>Status: <span id="users-result"></span></p>
+    </div>
+
+    <script>
+        async function checkService(url, elementId) {
+            const resultElement = document.getElementById(elementId);
+            resultElement.textContent = 'Checking...';
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+                const data = await response.text();
+                resultElement.textContent = data;
+                resultElement.style.color = 'green';
+            } catch (error) {
+                console.error('Error:', error);
+                resultElement.textContent = 'Failed to connect!';
+                resultElement.style.color = 'red';
+            }
+        }
+    </script>
+</body>
+</html>

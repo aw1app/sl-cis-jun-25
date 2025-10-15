@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+  pre_build:
+    commands:
+      - echo This is a Pre Build Step
+  build:
+    commands:
+      - echo This is a Build Step
+      - mvn clean package
+  post_build:
+    commands:
+      - echo This is a Post Build Step. Build Completed `date`
+artifacts:
+  files:
+    - target/codebuild-demo-0.0.1-SNAPSHOT.jar
