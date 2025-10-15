@@ -1,0 +1,2 @@
+Task-1: Create a mapping that will return details of a single product given the product id.
+Test the implementation using postman
