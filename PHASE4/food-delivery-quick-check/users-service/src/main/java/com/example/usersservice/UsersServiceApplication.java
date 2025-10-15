@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UsersServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(FoodsServiceApplication.class, args);
+        SpringApplication.run(UsersServiceApplication.class, args);
     }
 
     @GetMapping("/ping")
